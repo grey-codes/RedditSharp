@@ -1,7 +1,8 @@
+@use '~@angular/material' as mat;
 @mixin dashcard-theme($theme) {
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
-  $card-color: mat-color($background, card);
+  $card-color: mat.get-color-from-palette($background, card);
   $gradientList: rgba($card-color, 0), rgba($card-color, 0),
     rgba($card-color, 0), rgba($card-color, 1);
 

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use '~@angular/material' as mat;
 
 html,
 body {
@@ -93,19 +94,18 @@ div.loading .thing {
   background: url("/assets/img/load.svg");
 }
 
-@import "~@angular/material/theming";
-@include mat-core();
+@include mat.core();
 
-$angular-warn: mat-palette($mat-deep-orange);
+$angular-warn: mat.define-palette(mat.$deep-orange-palette);
 
 // Light theme
-$light-primary: mat-palette($mat-indigo);
-$light-accent: mat-palette($mat-pink, A200, A100, A400);
-$light-theme: mat-light-theme($light-primary, $light-accent, $angular-warn);
+$light-primary: mat.define-palette(mat.$indigo-palette);
+$light-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$light-theme: mat.define-light-theme($light-primary, $light-accent, $angular-warn);
 // Dark theme
-$dark-primary: mat-palette($mat-pink);
-$dark-accent: mat-palette($mat-purple, A200, A100, A400);
-$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $angular-warn);
+$dark-primary: mat.define-palette(mat.$pink-palette);
+$dark-accent: mat.define-palette(mat.$purple-palette, A200, A100, A400);
+$dark-theme: mat.define-dark-theme($dark-primary, $dark-accent, $angular-warn);
 
 // Import mixin of sidenav component
 @import "app/dashboard/scrollbar.mixin";
@@ -126,15 +126,15 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $angular-warn);
   @include dashcard-theme($theme);
   @include scrollbar-theme($theme);
   a {
-    color: mat-color(map-get($theme, accent));
+    color: mat.get-color-from-palette(map-get($theme, accent));
   }
   // Include other custom component mixins here...
 }
 
-@include angular-material-theme($light-theme);
+@include mat.all-component-themes($light-theme);
 @include custom-components-theme($light-theme);
 
 .dark-theme {
-  @include angular-material-theme($dark-theme);
+  @include mat.all-component-themes($dark-theme);
   @include custom-components-theme($dark-theme);
 }
