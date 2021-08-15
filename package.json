@@ -37,7 +37,7 @@
     "@angular/cli": "^12.1.4",
     "@angular/compiler-cli": "~12.1.4",
     "@types/jasmine": "~3.8.2",
-    "@types/node": "^16.4.7",
+    "@types/node": "^16.6.1",
     "codelyzer": "^6.0.0",
     "firebase-tools": "^9.6.1",
     "fuzzy": "^0.1.3",
