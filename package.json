@@ -21,12 +21,12 @@
     "@angular/core": "^12.1.4",
     "@angular/fire": "^6.1.4",
     "@angular/forms": "~12.1.4",
-    "@angular/material": "^12.1.4",
+    "@angular/material": "^12.2.3",
     "@angular/platform-browser": "~12.1.4",
     "@angular/platform-browser-dynamic": "~12.1.4",
     "@angular/router": "~12.1.4",
     "debug": "^4.3.1",
-    "firebase": "^8.3",
+    "firebase": "^9.0",
     "rxjs": "~6.6.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -34,7 +34,7 @@
   "devDependencies": {
     "@angular-devkit/architect": "0.1201.4",
     "@angular-devkit/build-angular": "~12.2.1",
-    "@angular/cli": "^12.1.4",
+    "@angular/cli": "^12.2.3",
     "@angular/compiler-cli": "~12.1.4",
     "@types/jasmine": "~3.8.2",
     "@types/node": "^16.6.1",
