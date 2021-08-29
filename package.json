@@ -22,7 +22,7 @@
     "@angular/fire": "^6.1.4",
     "@angular/forms": "~12.2.3",
     "@angular/material": "^12.2.3",
-    "@angular/platform-browser": "~12.1.4",
+    "@angular/platform-browser": "~12.2.3",
     "@angular/platform-browser-dynamic": "~12.1.4",
     "@angular/router": "~12.1.4",
     "debug": "^4.3.1",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@angular-devkit/architect": "0.1201.4",
-    "@angular-devkit/build-angular": "~12.2.1",
+    "@angular-devkit/build-angular": "~12.2.3",
     "@angular/cli": "^12.2.3",
     "@angular/compiler-cli": "~12.1.4",
     "@types/jasmine": "~3.8.2",
