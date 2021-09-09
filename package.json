@@ -24,7 +24,7 @@
     "@angular/material": "^12.2.3",
     "@angular/platform-browser": "~12.2.3",
     "@angular/platform-browser-dynamic": "~12.1.4",
-    "@angular/router": "~12.1.4",
+    "@angular/router": "~12.2.5",
     "debug": "^4.3.1",
     "firebase": "^9.0",
     "rxjs": "~6.6.6",
