@@ -33,7 +33,7 @@
     "@angular-devkit/build-angular": "~13.2.5",
     "@angular/cli": "^13.2.5",
     "@angular/compiler-cli": "^13.2.5",
-    "@types/jasmine": "~3.8.2",
+    "@types/jasmine": "~4.0.1",
     "@types/node": "^16.7.6",
     "codelyzer": "^6.0.0",
     "fuzzy": "^0.1.3",
