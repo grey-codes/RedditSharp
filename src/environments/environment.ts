@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   subredditLimit: 25,
-  clientId: "IbfzyNrDp0uyog",
+  clientId: "bjHD0omFFgcFb5ePEHM5eA",
   authorizationType: "authorization_code",
   refreshType: "refresh_token",
   tokenEndpoint: "https://www.reddit.com/api/v1/access_token",
