@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build:firebase": "ng build --configuration firebase",
     "build:prod": "ng build --configuration production",
     "build:ci": "./node_modules/.bin/ng t"
   },
