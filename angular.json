@@ -148,7 +148,13 @@
         },
         "deploy": {
           "builder": "@angular/fire:deploy",
-          "options": {}
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "reddit-client:build:firebase",
+            "firebaseProject": "redditsharp-b7de3",
+            "firebaseHostingSite": "redditsharp-b7de3"
+          }
         }
       }
     }
