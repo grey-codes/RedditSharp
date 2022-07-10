@@ -1,5 +1,5 @@
 import { Component, Inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { FormBuilder, FormGroup, NgForm, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, NgForm, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { Router } from "@angular/router";
 import { Subject } from "rxjs";
@@ -16,7 +16,7 @@ export class SubredditModalComponent implements OnInit, OnDestroy {
   @ViewChild("myForm") ngForm!: NgForm;
   data: any;
   subreddit: string = "";
-  formGroup: FormGroup;
+  formGroup: UntypedFormGroup;
 
   ngUnsubscribe = new Subject<void>();
 
@@ -28,7 +28,7 @@ export class SubredditModalComponent implements OnInit, OnDestroy {
     public dialogRef: MatDialogRef<SubredditModalComponent>,
     private dark: DarkModeService,
     private router: Router,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private subVal: SubredditValidatorService,
     @Inject(MAT_DIALOG_DATA) public inputData: any
   ) {
@@ -82,7 +82,7 @@ export class SubredditModalComponent implements OnInit, OnDestroy {
     this.closeDialog();
   }
 
-  getErrorMessage(fg: FormGroup, controlName: string): string {
+  getErrorMessage(fg: UntypedFormGroup, controlName: string): string {
     let c = fg.get(controlName);
     if (!c) {
       return "Invalid control";

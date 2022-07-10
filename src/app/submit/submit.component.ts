@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import {
   AsyncValidatorFn,
-  FormBuilder,
-  FormControl,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  UntypedFormGroup,
   ValidatorFn,
   Validators
 } from "@angular/forms";
@@ -31,9 +31,9 @@ import { ResultModalComponent } from "./result-modal/result-modal.component";
 })
 export class SubmitComponent implements OnInit, OnDestroy {
   SubmissionType = SubmissionType;
-  firstFormGroup!: FormGroup;
-  secondFormGroup!: FormGroup;
-  thirdFormGroup!: FormGroup;
+  firstFormGroup!: UntypedFormGroup;
+  secondFormGroup!: UntypedFormGroup;
+  thirdFormGroup!: UntypedFormGroup;
   secondFormData!: SubmitFormControl[];
   postData: PostDataService;
 
@@ -43,7 +43,7 @@ export class SubmitComponent implements OnInit, OnDestroy {
   ngUnsubscribe = new Subject<void>();
 
   constructor(
-    private _formBuilder: FormBuilder,
+    private _formBuilder: UntypedFormBuilder,
     private _postData: PostDataService,
     private _redditFeed: RedditFeedService,
     private _oauth: OauthService,
@@ -73,7 +73,7 @@ export class SubmitComponent implements OnInit, OnDestroy {
       });
     this.postData.submitFormData$.subscribe((data: SubmitFormControl[]) => {
       this.secondFormData = data;
-      const formGroup: { [name: string]: FormControl } = {};
+      const formGroup: { [name: string]: UntypedFormControl } = {};
 
       data.forEach((formControl) => {
         let val: string = "";
@@ -115,14 +115,14 @@ export class SubmitComponent implements OnInit, OnDestroy {
           }
         }
 
-        formGroup[formControl.controlName] = new FormControl(
+        formGroup[formControl.controlName] = new UntypedFormControl(
           val,
           validators,
           validatorsAsync
         );
       });
 
-      this.secondFormGroup = new FormGroup(
+      this.secondFormGroup = new UntypedFormGroup(
         formGroup,
         null,
         this._reqVal.getValidator()
@@ -131,7 +131,7 @@ export class SubmitComponent implements OnInit, OnDestroy {
     });
   }
 
-  getErrorMessage(fg: FormGroup, controlName: string): string {
+  getErrorMessage(fg: UntypedFormGroup, controlName: string): string {
     let c = fg.get(controlName);
     if (!c) {
       return "Invalid control";
