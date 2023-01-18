@@ -24,6 +24,7 @@ export class Post {
   private _url: string | null = null;
   private _thumbnailUrl: string | null = null;
   private _previewUrl: string | null = null;
+  private _srcSet: string | null = null;
   private _text: string | null = null;
   private _html: string | null = null;
   private _imageUrl: string | null = null;
@@ -84,6 +85,9 @@ export class Post {
   }
   public get previewUrl(): string | null {
     return this._previewUrl;
+  }
+  public get srcSet(): string | null {
+    return this._srcSet;
   }
   public get upvotes(): number {
     return this._upvotes + Math.max(this._userVote, 0);
@@ -166,6 +170,9 @@ export class Post {
   }
   public set previewUrl(previewUrl: string | null) {
     this._previewUrl = previewUrl;
+  }
+  public set srcSet(srcSet: string | null) {
+    this._srcSet = srcSet;
   }
   public set text(text: string | null) {
     this._text = text;

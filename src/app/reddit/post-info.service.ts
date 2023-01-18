@@ -88,6 +88,9 @@ export class PostInfoService {
       if (im && im.source && im.source.url) {
         post.previewUrl = this.htmlDecode(im.source.url);
       }
+      if (!!im && !!im.resolutions && !!im.resolutions.length) {
+        post.srcSet = im.resolutions.reduce((previousString: string, img: any) => previousString + (!!previousString.length ? ", " : "") + this.htmlDecode(img.url) + " " + img.width+"w", "" )
+      }
     }
     if (json.thumbnail) post.thumbnailUrl = this.htmlDecode(json.thumbnail);
     if (json.media_embed && json.media_embed.content)
