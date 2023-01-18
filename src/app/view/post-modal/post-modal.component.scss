@@ -7,14 +7,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.mat-dialog-content {
-  max-height: none;
-  /*min-height: calc(100% - 2rem - 24px);*/
-  overflow-x: hidden;
-  margin-top: -24px;
-  padding-top: 24px;
-  padding-bottom: 2rem;
-}
+
 .dialog-content .header {
   height: 3em;
 }
@@ -55,16 +48,6 @@
   margin-bottom: 1em;
 }
 
-.dialog-footer {
-  position: sticky;
-  bottom: -25px;
-  left: -24px;
-  padding: 0px;
-  margin: -24px;
-  background: inherit;
-  max-height: 2rem;
-}
-
 .dialog-footer mat-divider {
   width: 100%;
 }
@@ -83,6 +66,6 @@ video.fluid-embed {
   max-height: 70vh;
 }
 
-div.comments {
-  overflow-x: hidden;
+app-post-comment {
+  overflow: hidden;
 }

@@ -2,20 +2,23 @@
   display: flex;
   flex-direction: row;
 }
+
 .post-aside {
-  font-size: 0.75em;
+  font-size: 0.6em;
   padding-top: 0.7em;
-  padding-right: 8px;
+  padding-right: 4px;
 }
+
 .post-main {
   width: 95%; /*fallback for browsers dont use support calc*/
   width: calc(100% - 28px);
 }
+
 .reply-container {
   padding-left: 8px;
   border-left: rgba(128, 128, 128, 0.5) 0.1rem solid;
 }
+
 span.votes {
   width: 3em;
-  display: inline-block;
 }

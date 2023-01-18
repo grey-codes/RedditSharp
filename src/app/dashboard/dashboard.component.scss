@@ -40,27 +40,27 @@ div.image-container.is-video::after {
   filter: opacity(0.5) invert(1);
 }
 
-.mat-card-content {
+.mat-mdc-card-content {
   overflow: hidden;
   max-height: 60vmin;
 }
 
-.mat-card-content .fadeout-container {
+.mat-mdc-card-content .fadeout-container {
   position: relative;
 }
 
-.mat-card-content .fadeout-inner {
+.mat-mdc-card-content .fadeout-inner {
   position: absolute;
   height: 70vmin;
   width: 100%;
   z-index: 1;
 }
 
-.is-text > .mat-card-content {
+.is-text > .mat-mdc-card-content {
   max-height: 10rem;
 }
 
-.is-text > .mat-card-content .fadeout-inner {
+.is-text > .mat-mdc-card-content .fadeout-inner {
   height: 10rem;
 }
 

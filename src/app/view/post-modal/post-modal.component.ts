@@ -1,5 +1,5 @@
 import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
-import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from "@angular/material/legacy-dialog";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { BehaviorSubject, Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { DarkModeService } from "src/app/dark-mode.service";
@@ -13,7 +13,7 @@ export interface DialogData {
 @Component({
   selector: "app-post-modal",
   templateUrl: "./post-modal.component.html",
-  styleUrls: ["./post-modal.component.css"]
+  styleUrls: ["./post-modal.component.scss"]
 })
 export class PostModalComponent implements OnInit, OnDestroy {
   private get _loading(): boolean {

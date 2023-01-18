@@ -1,5 +1,6 @@
 <div #dashboardroot>
   <mat-card
+    appearance="outlined"
     class="post-card"
     *ngFor="let post of posts; trackBy: trackById; index as i"
     [attr.data-post-index]="i"

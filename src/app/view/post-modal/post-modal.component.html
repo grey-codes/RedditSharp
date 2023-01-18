@@ -31,7 +31,7 @@
     <img #fimg *ngIf="!this.hidden" class="full-image" [src]="post.url" (error)="this.hidden = true" >
   -->
   <div class="selftext" [innerHTML]="post.html"></div>
-  <mat-divider></mat-divider>
+  <mat-divider *ngIf="post.videoUrl || post.imageUrl" ></mat-divider>
   <div class="loading" *ngIf="loading$ | async">
     <div class="thing"></div>
   </div>
@@ -42,7 +42,6 @@
     ></app-post-comment>
   </div>
 </div>
-<div mat-dialog-actions class="dialog-footer">
-  <mat-divider></mat-divider>
+<div mat-dialog-actions>
   <app-post-footer [post]="post" (onClose)="closeDialog()"></app-post-footer>
 </div>

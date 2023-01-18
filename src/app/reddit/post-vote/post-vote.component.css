@@ -8,12 +8,24 @@
   font-size: 1em;
   min-width: 0em;
 }
-.mat-icon {
+
+.mat-mdc-button > .mat-icon {
   height: auto;
   width: auto;
   font-size: 1.25em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.mat-button {
+.mat-mdc-button {
   padding: 0px;
+  height: auto !important;
+  text-align: center;
+  margin: 0;
+}
+
+span.votes {
+  font-size: 1.25em;
+  display: block;
+  padding: 2px;
 }

@@ -7,7 +7,7 @@ import {
   ValidatorFn,
   Validators
 } from "@angular/forms";
-import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
+import { MatDialog } from "@angular/material/dialog";
 import { ActivatedRoute } from "@angular/router";
 import { Subject } from "rxjs";
 import { OauthService } from "../reddit/oauth.service";
