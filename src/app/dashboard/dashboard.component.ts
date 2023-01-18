@@ -7,7 +7,7 @@ import {
   OnDestroy,
   OnInit
 } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
+import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
 import { ActivatedRoute } from "@angular/router";
 import { BehaviorSubject, merge, Subject, Subscription } from "rxjs";
 import { debounceTime, first, skip, takeUntil } from "rxjs/operators";
