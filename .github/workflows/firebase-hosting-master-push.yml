@@ -13,10 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.3.0
-      - name: Install dependencies
-        run: npm ci
-      - name: Install angular
-        run: npm install @angular/cli
       - name: Build for Firebase
         run: yarn run build:firebase
       - name: Push to Firebase
