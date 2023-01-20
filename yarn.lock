@@ -264,7 +264,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/cdk@npm:^15.1.0":
+"@angular/cdk@npm:^15.1.1":
   version: 15.1.1
   resolution: "@angular/cdk@npm:15.1.1"
   dependencies:
@@ -9324,7 +9324,7 @@ __metadata:
     "@angular-eslint/schematics": 15.2.0
     "@angular-eslint/template-parser": 15.2.0
     "@angular/animations": ^15.1.1
-    "@angular/cdk": ^15.1.0
+    "@angular/cdk": ^15.1.1
     "@angular/cli": ~15.1.1
     "@angular/common": ^15.1.1
     "@angular/compiler": ^15.1.1
