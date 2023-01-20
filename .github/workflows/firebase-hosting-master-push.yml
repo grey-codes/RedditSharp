@@ -13,6 +13,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.3.0
+      - name: Set Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: Install dependencies
+        run: yarn install
       - name: Build for Firebase
         run: yarn run build:firebase
       - name: Push to Firebase
