@@ -13,7 +13,7 @@
   }
 
   .mat-mdc-dialog-actions {
-    border-top: 1px solid map.get($foreground, 'divider');
+    border-top: 1px solid map.get($foreground, 'divider') !important;
     color: var(--mdc-dialog-supporting-text-color, black);
   }
 }

@@ -30,6 +30,7 @@ blockquote {
   /* on mobile*/
   div.post-modal .mat-mdc-dialog-container {
     /*fullscreen*/
+    position: fixed;
     width: 100vw;
     height: 100vh;
     max-width: 100vw;
@@ -43,7 +44,7 @@ blockquote {
   }
 
   div.post-modal .mdc-dialog__actions {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;

@@ -12,26 +12,34 @@
       }"
     ></div>
     <div class="aside-avatar">
-      <span class="title">{{ post.title }}</span> <br />
+      <span mat-dialog-title class="title">{{ post.title }}</span> <br />
       <app-post-subtitle [post]="post"></app-post-subtitle>
     </div>
   </div>
   <mat-divider></mat-divider>
-  <img *ngIf="post.imageUrl" class="full-image" [src]="post.imageUrl" />
-  <div
-    *ngIf="post.mediaEmbed"
-    [innerHTML]="post.mediaEmbed | safeHTML"
-    class="embed-fluid"
-  ></div>
-  <video *ngIf="post.videoUrl" class="fluid-embed" controls autoplay muted loop>
-    <source [src]="post.videoUrl" type="video/mp4" />
-  </video>
-  <!--
-    Bruteforces image if it can display at all
-    <img #fimg *ngIf="!this.hidden" class="full-image" [src]="post.url" (error)="this.hidden = true" >
-  -->
-  <div class="selftext" [innerHTML]="post.html"></div>
-  <mat-divider *ngIf="post.videoUrl || post.imageUrl" ></mat-divider>
+  <div *ngIf="post.imageUrl">
+    <img
+      class="full-image"
+      [src]="post.imageUrl"
+      [srcset]="post.srcSet"
+      alt="{{ post.title }}"
+    />
+    <mat-divider></mat-divider>
+  </div>
+  <div *ngIf="post.mediaEmbed">
+    <div [innerHTML]="post.mediaEmbed | safeHTML" class="embed-fluid" ></div>
+    <mat-divider></mat-divider>
+  </div>
+  <div *ngIf="post.videoUrl">
+    <video class="fluid-embed" controls autoplay muted loop>
+      <source [src]="post.videoUrl" type="video/mp4" />
+    </video>
+    <mat-divider></mat-divider>
+  </div>
+  <div *ngIf="!!post.html && !!post.html.length">
+    <div class="selftext" [innerHTML]="post.html"></div>
+    <mat-divider></mat-divider>
+  </div>
   <div class="loading" *ngIf="loading$ | async">
     <div class="thing"></div>
   </div>

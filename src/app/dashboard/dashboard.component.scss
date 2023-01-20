@@ -21,6 +21,7 @@
 
 div.image-container {
   position: relative;
+  border-radius: var(--mdc-shape-medium, 4px);
 }
 
 div.image-container.is-video::after {

@@ -22,3 +22,9 @@
 span.votes {
   width: 3em;
 }
+
+@media (max-width: 600px) {
+  app-post-comment[data-hidden-mobile="true"] {
+    display: none;
+  }
+}

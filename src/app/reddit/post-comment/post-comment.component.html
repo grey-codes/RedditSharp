@@ -6,6 +6,8 @@
   <div class="post-content" *ngIf="post.html" [innerHTML]="post.html"></div>
   <div class="reply-container">
     <app-post-comment
+      [attr.data-hidden-mobile]="commentLevel>=mobileCommentNestLevel"
+      [comment-level]="commentLevel + 1"
       *ngFor="let reply of post.replies"
       [post]="reply"
     ></app-post-comment>

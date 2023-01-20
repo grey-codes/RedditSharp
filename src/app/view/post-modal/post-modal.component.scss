@@ -31,6 +31,17 @@
 
 .dialog-content .header .title {
   font-size: 2em;
+  font-size: 2em;
+  line-height: 0.9em;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.dialog-content .header .title.mdc-dialog__title::before {
+  height: 0px;
 }
 
 .dialog-content .header {
@@ -57,6 +68,7 @@ img.full-image {
   width: 100%;
   height: 100%;
   max-height: 70vh;
+  border-radius: var(--mdc-shape-medium, 4px);
 }
 
 video.fluid-embed {
