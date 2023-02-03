@@ -346,17 +346,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/compiler@npm:^15.1.1":
-  version: 15.1.1
-  resolution: "@angular/compiler@npm:15.1.1"
+"@angular/compiler@npm:^15.1.3":
+  version: 15.1.3
+  resolution: "@angular/compiler@npm:15.1.3"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/core": 15.1.1
+    "@angular/core": 15.1.3
   peerDependenciesMeta:
     "@angular/core":
       optional: true
-  checksum: bdb739383d0ba1c1eaece22d872335ce379249a653acc65bde9163cdda6454bd8ccfa6fe23cee787131e005be1e4d82a58eb4b8fe111e34a15b2e25f430524ce
+  checksum: 3bd2c9da85cdd9059e2939b8f474ecc075a4dd98daa5a2b2ef73eec11902e76f53b111fb30ab8eac17f2098b20547797021cb16e310a04d2d1bf4b2a62619646
   languageName: node
   linkType: hard
 
@@ -9327,7 +9327,7 @@ __metadata:
     "@angular/cdk": ^15.1.0
     "@angular/cli": ~15.1.1
     "@angular/common": ^15.1.1
-    "@angular/compiler": ^15.1.1
+    "@angular/compiler": ^15.1.3
     "@angular/compiler-cli": ^15.1.0
     "@angular/core": ^15.1.1
     "@angular/fire": ^7.5.0
