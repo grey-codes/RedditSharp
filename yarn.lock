@@ -15,7 +15,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/architect@npm:*, @angular-devkit/architect@npm:0.1501.2":
+"@angular-devkit/architect@npm:*":
   version: 0.1501.2
   resolution: "@angular-devkit/architect@npm:0.1501.2"
   dependencies:
@@ -35,14 +35,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/build-angular@npm:^15.1.1":
-  version: 15.1.2
-  resolution: "@angular-devkit/build-angular@npm:15.1.2"
+"@angular-devkit/build-angular@npm:^15.1.5":
+  version: 15.1.5
+  resolution: "@angular-devkit/build-angular@npm:15.1.5"
   dependencies:
     "@ampproject/remapping": 2.2.0
-    "@angular-devkit/architect": 0.1501.2
-    "@angular-devkit/build-webpack": 0.1501.2
-    "@angular-devkit/core": 15.1.2
+    "@angular-devkit/architect": 0.1501.5
+    "@angular-devkit/build-webpack": 0.1501.5
+    "@angular-devkit/core": 15.1.5
     "@babel/core": 7.20.12
     "@babel/generator": 7.20.7
     "@babel/helper-annotate-as-pure": 7.18.6
@@ -53,7 +53,7 @@ __metadata:
     "@babel/runtime": 7.20.7
     "@babel/template": 7.20.7
     "@discoveryjs/json-ext": 0.5.7
-    "@ngtools/webpack": 15.1.2
+    "@ngtools/webpack": 15.1.5
     ansi-colors: 4.1.3
     autoprefixer: 10.4.13
     babel-loader: 9.1.2
@@ -127,20 +127,20 @@ __metadata:
       optional: true
     tailwindcss:
       optional: true
-  checksum: ac59e642832e4cbe17a5f4132f8214b663a1b649f9915166d11117c74e48987c53a85516ae589535e9dc122cf0cdceedcb2e6e72d88d9d049a1e1c3033599517
+  checksum: 9be01d0136380db9672a100bb378125eba3a1fad6311f1a4dbed428b9a942efd5c10b43d2fe0b72a0d8227166f9f1f32d0441ec3adde5170f47e435942aef405
   languageName: node
   linkType: hard
 
-"@angular-devkit/build-webpack@npm:0.1501.2":
-  version: 0.1501.2
-  resolution: "@angular-devkit/build-webpack@npm:0.1501.2"
+"@angular-devkit/build-webpack@npm:0.1501.5":
+  version: 0.1501.5
+  resolution: "@angular-devkit/build-webpack@npm:0.1501.5"
   dependencies:
-    "@angular-devkit/architect": 0.1501.2
+    "@angular-devkit/architect": 0.1501.5
     rxjs: 6.6.7
   peerDependencies:
     webpack: ^5.30.0
     webpack-dev-server: ^4.0.0
-  checksum: 2f7899c7d3dba7c2345b2261d381391b8ac006e976e59b819b9b220b9145715454ffbf79482d513a1097da4b40aa2deb700d3da3b840bf673ae56fcf43a8dfe4
+  checksum: aeebeea10590c8b1fdb2befda6586252398ea59a3612d708193d5e713d73a4bd9842e778b856756ea2a7eca8693c0a48c088334bbb96eadb57cd209223449f9d
   languageName: node
   linkType: hard
 
@@ -3521,14 +3521,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ngtools/webpack@npm:15.1.2":
-  version: 15.1.2
-  resolution: "@ngtools/webpack@npm:15.1.2"
+"@ngtools/webpack@npm:15.1.5":
+  version: 15.1.5
+  resolution: "@ngtools/webpack@npm:15.1.5"
   peerDependencies:
     "@angular/compiler-cli": ^15.0.0
     typescript: ">=4.8.2 <5.0"
     webpack: ^5.54.0
-  checksum: ae9846ea35811fe552b9de85a01557d71e794c5970b65683136850f7132c0872c00c9b0d97bad4cd9791c9361f35baa19e907b5a16cea142558395dde8ce4289
+  checksum: 8a6b3a79f264b667a14edf122ca1ba372479999f6f7b5a329521146986cfca4875e500881bec1b882c14fb3a9c932606721f61e08abe8227977e2778c4703a7b
   languageName: node
   linkType: hard
 
@@ -9450,7 +9450,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "reddit-client@workspace:."
   dependencies:
-    "@angular-devkit/build-angular": ^15.1.1
+    "@angular-devkit/build-angular": ^15.1.5
     "@angular-eslint/builder": ^15.2.0
     "@angular-eslint/eslint-plugin": ^15.2.0
     "@angular-eslint/eslint-plugin-template": ^15.2.0
