@@ -59,7 +59,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["karma-coverage", "npm:2.2.0"],\
             ["karma-jasmine", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:5.1.0"],\
             ["karma-jasmine-html-reporter", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:2.0.0"],\
-            ["prettier", "npm:2.8.4"],\
+            ["prettier", "npm:2.8.7"],\
             ["rxjs", "npm:7.8.0"],\
             ["tslib", "npm:2.5.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"],\
@@ -12565,10 +12565,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["prettier", [\
-        ["npm:2.8.4", {\
-          "packageLocation": "./.yarn/cache/prettier-npm-2.8.4-ba64a351d1-c173064bf3.zip/node_modules/prettier/",\
+        ["npm:2.8.7", {\
+          "packageLocation": "./.yarn/cache/prettier-npm-2.8.7-1962ac9483-fdc8f2616f.zip/node_modules/prettier/",\
           "packageDependencies": [\
-            ["prettier", "npm:2.8.4"]\
+            ["prettier", "npm:2.8.7"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -12859,7 +12859,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["karma-coverage", "npm:2.2.0"],\
             ["karma-jasmine", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:5.1.0"],\
             ["karma-jasmine-html-reporter", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:2.0.0"],\
-            ["prettier", "npm:2.8.4"],\
+            ["prettier", "npm:2.8.7"],\
             ["rxjs", "npm:7.8.0"],\
             ["tslib", "npm:2.5.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"],\
