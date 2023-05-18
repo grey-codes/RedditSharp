@@ -541,19 +541,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/platform-browser@npm:^15.2.3":
-  version: 15.2.3
-  resolution: "@angular/platform-browser@npm:15.2.3"
+"@angular/platform-browser@npm:^16.0.2":
+  version: 16.0.2
+  resolution: "@angular/platform-browser@npm:16.0.2"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/animations": 15.2.3
-    "@angular/common": 15.2.3
-    "@angular/core": 15.2.3
+    "@angular/animations": 16.0.2
+    "@angular/common": 16.0.2
+    "@angular/core": 16.0.2
   peerDependenciesMeta:
     "@angular/animations":
       optional: true
-  checksum: 689c0b349c2ddf44e408521fe24b508d6156cb6a0baeba56521388c925e8a897dc9c714abda1a46b73f74f37c9681c8344b11591b9202716131efbf9453d628a
+  checksum: 12d26e3d0781a778a040f167300bb24a37c083d3cdc0b9f8c7deac05559e3cbf0f43826a3b70a5ecb302a9dcc0b887b06885943a8488ba475bd15bd1dc44fd3d
   languageName: node
   linkType: hard
 
@@ -9605,7 +9605,7 @@ __metadata:
     "@angular/fire": ^7.5.0
     "@angular/forms": ^15.2.3
     "@angular/material": ^15.2.3
-    "@angular/platform-browser": ^15.2.3
+    "@angular/platform-browser": ^16.0.2
     "@angular/platform-browser-dynamic": ^15.2.3
     "@angular/router": ^15.2.3
     "@types/jasmine": ~4.3.1
