@@ -29,5 +29,6 @@ jobs:
           name: 'Firebase Build'
           path: |
             dist
+            firebase.json
             !dist/**/*.md
-          retention-days: 5
+          retention-days: 1
