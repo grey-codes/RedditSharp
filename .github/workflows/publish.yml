@@ -17,7 +17,7 @@ jobs:
         with:
           run_id: ${{ github.event.workflow_run.id }}
           name: Firebase Build
-          path: ./dist
+          path: ./
           search_artifacts: true
       - name: Push to Firebase
         if: success()
