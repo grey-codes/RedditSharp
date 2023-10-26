@@ -7,7 +7,7 @@ import { Post } from "../post";
   styleUrls: ["./post-subtitle.component.css"]
 })
 export class PostSubtitleComponent implements OnInit, OnChanges {
-  private static readonly redditHosts = [
+  private static readonly LinkHostExclusions = [
     'www.reddit.com',
     'old.reddit.com',
     'reddit.com'
@@ -30,6 +30,6 @@ export class PostSubtitleComponent implements OnInit, OnChanges {
       throw new Error("Attribute 'post' is required");
     }
     const postUrl = this.post.url ? new URL(this.post.url) : undefined;
-    this.isLinkPost = postUrl ? !PostSubtitleComponent.redditHosts.includes(postUrl.host) : false;
+    this.isLinkPost = postUrl ? !PostSubtitleComponent.LinkHostExclusions.includes(postUrl.host) : false;
   }
 }
