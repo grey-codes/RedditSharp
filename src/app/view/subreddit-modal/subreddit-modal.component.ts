@@ -34,19 +34,13 @@ export class SubredditModalComponent implements OnInit, OnDestroy {
   ) {
     this.data = inputData;
     this.formGroup = this.formBuilder.group({
-      subreddit: [
-        "",
-        Validators.compose([Validators.required]),
-        subVal.getValidator()
-      ]
+      subreddit: ["", Validators.compose([Validators.required]), subVal.getValidator()]
     });
     document.getElementById("dialContent")?.scrollIntoView();
-    this.dark.darkMode$
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((isDark: boolean) => {
-        if (isDark) dialogRef.addPanelClass("dark-theme");
-        else dialogRef.removePanelClass("dark-theme");
-      });
+    this.dark.darkMode$.pipe(takeUntil(this.ngUnsubscribe)).subscribe((isDark: boolean) => {
+      if (isDark) dialogRef.addPanelClass("dark-theme");
+      else dialogRef.removePanelClass("dark-theme");
+    });
   }
 
   ngOnInit(): void {}

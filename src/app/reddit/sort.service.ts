@@ -10,12 +10,8 @@ export class SortService {
 
   private _sortMode: SortModes = SortModes.Best;
   private _filterMode: FilterModes = FilterModes.All;
-  private _sortMode$: BehaviorSubject<SortModes> = new BehaviorSubject<SortModes>(
-    this._sortMode
-  );
-  private _filterMode$: BehaviorSubject<FilterModes> = new BehaviorSubject<FilterModes>(
-    this._filterMode
-  );
+  private _sortMode$: BehaviorSubject<SortModes> = new BehaviorSubject<SortModes>(this._sortMode);
+  private _filterMode$: BehaviorSubject<FilterModes> = new BehaviorSubject<FilterModes>(this._filterMode);
 
   public get sortMode(): SortModes {
     return this._sortMode;
@@ -56,10 +52,7 @@ export class SortService {
     }
   }
 
-  setSortMode(
-    sortMode: SortModes,
-    filterMode: FilterModes | null = null
-  ): void {
+  setSortMode(sortMode: SortModes, filterMode: FilterModes | null = null): void {
     this.sortMode = sortMode;
     if (filterMode) {
       this.filterMode = filterMode;

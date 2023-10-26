@@ -1,12 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import {
-  AsyncValidatorFn,
-  UntypedFormBuilder,
-  UntypedFormControl,
-  UntypedFormGroup,
-  ValidatorFn,
-  Validators
-} from "@angular/forms";
+import { AsyncValidatorFn, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidatorFn, Validators } from "@angular/forms";
 import { MatDialog } from "@angular/material/dialog";
 import { ActivatedRoute } from "@angular/router";
 import { Subject } from "rxjs";
@@ -16,12 +9,7 @@ import { RequirementValidatorService } from "../reddit/validators/requirement-va
 import { SubredditValidatorService } from "../reddit/validators/subreddit-validator.service";
 import { AlphaUnderValidator } from "../validators/alpha-under-validator";
 import { URLValidator } from "../validators/url-validator";
-import {
-  PostDataService,
-  SubmissionType,
-  SubmitFormControl,
-  SubmitFormData
-} from "./postdata.service";
+import { PostDataService, SubmissionType, SubmitFormControl, SubmitFormData } from "./postdata.service";
 import { ResultModalComponent } from "./result-modal/result-modal.component";
 
 @Component({
@@ -63,14 +51,12 @@ export class SubmitComponent implements OnInit, OnDestroy {
       tags: [""]
     });
     this.val1 = this.firstFormGroup.value;
-    this.firstFormGroup
-      .get("postType")
-      ?.valueChanges.subscribe((val: string) => {
-        if ((<any[]>Object.values(SubmissionType)).includes(val)) {
-          this._postData.type = <SubmissionType>val;
-          this.val1 = this.firstFormGroup.value;
-        }
-      });
+    this.firstFormGroup.get("postType")?.valueChanges.subscribe((val: string) => {
+      if ((<any[]>Object.values(SubmissionType)).includes(val)) {
+        this._postData.type = <SubmissionType>val;
+        this.val1 = this.firstFormGroup.value;
+      }
+    });
     this.postData.submitFormData$.subscribe((data: SubmitFormControl[]) => {
       this.secondFormData = data;
       const formGroup: { [name: string]: UntypedFormControl } = {};
@@ -92,14 +78,10 @@ export class SubmitComponent implements OnInit, OnDestroy {
             validators.push(Validators.required);
           }
           if (formControl.validators.minLength) {
-            validators.push(
-              Validators.minLength(formControl.validators.minLength)
-            );
+            validators.push(Validators.minLength(formControl.validators.minLength));
           }
           if (formControl.validators.maxLength) {
-            validators.push(
-              Validators.maxLength(formControl.validators.maxLength)
-            );
+            validators.push(Validators.maxLength(formControl.validators.maxLength));
           }
           if (formControl.validators.url) {
             validators.push(URLValidator);
@@ -115,18 +97,10 @@ export class SubmitComponent implements OnInit, OnDestroy {
           }
         }
 
-        formGroup[formControl.controlName] = new UntypedFormControl(
-          val,
-          validators,
-          validatorsAsync
-        );
+        formGroup[formControl.controlName] = new UntypedFormControl(val, validators, validatorsAsync);
       });
 
-      this.secondFormGroup = new UntypedFormGroup(
-        formGroup,
-        null,
-        this._reqVal.getValidator()
-      );
+      this.secondFormGroup = new UntypedFormGroup(formGroup, null, this._reqVal.getValidator());
       this.val2 = this.secondFormGroup.value; //cache
     });
   }

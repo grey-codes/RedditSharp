@@ -1,22 +1,9 @@
 import { BreakpointState, MediaMatcher } from "@angular/cdk/layout";
 import { OverlayContainer } from "@angular/cdk/overlay";
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  ViewChild
-} from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { MatSidenav } from "@angular/material/sidenav";
-import {
-  ActivatedRoute,
-  Event as RouterEvent,
-  NavigationEnd,
-  Router
-} from "@angular/router";
+import { ActivatedRoute, Event as RouterEvent, NavigationEnd, Router } from "@angular/router";
 import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { filter, takeUntil } from "rxjs/operators";
 import { environment } from "src/environments/environment";
@@ -159,17 +146,15 @@ export class AppComponent implements OnDestroy, OnInit, AfterViewInit {
     private dialog: MatDialog
   ) {
     this.mobileQuery = this.mobileService.mobileQuery;
-    this.darkMode$
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((dark: boolean) => {
-        const overlay = overlayContainer.getContainerElement();
-        if (dark && !overlay.classList.contains("dark-theme")) {
-          overlay.classList.add("dark-theme");
-        }
-        if (!dark && overlay.classList.contains("dark-theme")) {
-          overlay.classList.remove("dark-theme");
-        }
-      });
+    this.darkMode$.pipe(takeUntil(this.ngUnsubscribe)).subscribe((dark: boolean) => {
+      const overlay = overlayContainer.getContainerElement();
+      if (dark && !overlay.classList.contains("dark-theme")) {
+        overlay.classList.add("dark-theme");
+      }
+      if (!dark && overlay.classList.contains("dark-theme")) {
+        overlay.classList.remove("dark-theme");
+      }
+    });
   }
 
   ngAfterViewInit(): void {
@@ -232,10 +217,7 @@ export class AppComponent implements OnDestroy, OnInit, AfterViewInit {
     this.ngUnsubscribe.complete();
   }
 
-  setFeedMode(
-    sortMode: SortModes,
-    filterMode: FilterModes | null = null
-  ): void {
+  setFeedMode(sortMode: SortModes, filterMode: FilterModes | null = null): void {
     this.sortService.setSortMode(sortMode, filterMode);
   }
 
@@ -268,11 +250,7 @@ export class AppComponent implements OnDestroy, OnInit, AfterViewInit {
   }
 
   shouldShowPostFAB(): boolean {
-    return (
-      (this.router.url.startsWith("/r/") &&
-        !this.router.url.endsWith("/post")) ||
-      this.router.url === "/dashboard"
-    );
+    return (this.router.url.startsWith("/r/") && !this.router.url.endsWith("/post")) || this.router.url === "/dashboard";
   }
 
   clickNav(navSelector: any) {
@@ -281,9 +259,7 @@ export class AppComponent implements OnDestroy, OnInit, AfterViewInit {
     }
   }
 
-  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some((h) =>
-    h.test(window.location.host)
-  );
+  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some((h) => h.test(window.location.host));
 }
 
 interface Link {

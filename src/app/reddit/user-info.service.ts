@@ -10,7 +10,10 @@ export class UserInfoService {
   private _loading = false;
   userQueue: User[] = [];
 
-  constructor(private http: HttpClient, private ngZone: NgZone) {}
+  constructor(
+    private http: HttpClient,
+    private ngZone: NgZone
+  ) {}
 
   public populateInfo(u: User) {
     this.userQueue.push(u);
@@ -24,18 +27,14 @@ export class UserInfoService {
       .pipe(first())
       .subscribe(
         (results: any) => {
-          if (results.data.snoovatar_size)
-            u.avatarUrl = results.data.snoovatar_img;
-          else
-            u.avatarUrl =
-              "https://www.redditinc.com/assets/images/site/reddit-logo.png";
+          if (results.data.snoovatar_size) u.avatarUrl = results.data.snoovatar_img;
+          else u.avatarUrl = "https://www.redditinc.com/assets/images/site/reddit-logo.png";
           if (this.userQueue.length > 0) this.performNextRequest();
           else this._loading = false;
         },
         (err: any) => {
           if (this.userQueue.length > 0) this.performNextRequest();
-          u.avatarUrl =
-            "https://www.redditinc.com/assets/images/site/reddit-logo.png";
+          u.avatarUrl = "https://www.redditinc.com/assets/images/site/reddit-logo.png";
         }
       );
   }

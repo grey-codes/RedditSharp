@@ -27,12 +27,10 @@ export class ResultModalComponent implements OnInit, OnDestroy {
   ) {
     this.data = inputData;
     document.getElementById("dialContent")?.scrollIntoView();
-    this.dark.darkMode$
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((isDark: boolean) => {
-        if (isDark) dialogRef.addPanelClass("dark-theme");
-        else dialogRef.removePanelClass("dark-theme");
-      });
+    this.dark.darkMode$.pipe(takeUntil(this.ngUnsubscribe)).subscribe((isDark: boolean) => {
+      if (isDark) dialogRef.addPanelClass("dark-theme");
+      else dialogRef.removePanelClass("dark-theme");
+    });
   }
 
   ngOnInit(): void {}

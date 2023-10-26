@@ -1,19 +1,8 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import {
-  AbstractControl,
-  AsyncValidatorFn,
-  ValidationErrors
-} from "@angular/forms";
+import { AbstractControl, AsyncValidatorFn, ValidationErrors } from "@angular/forms";
 import { merge, Observable, of } from "rxjs";
-import {
-  catchError,
-  debounceTime,
-  map,
-  startWith,
-  switchMap,
-  take
-} from "rxjs/operators";
+import { catchError, debounceTime, map, startWith, switchMap, take } from "rxjs/operators";
 import { OauthService } from "../oauth.service";
 
 function isEmpty(value: any): boolean {
@@ -24,12 +13,11 @@ function isEmpty(value: any): boolean {
   providedIn: "root"
 })
 export class RequirementValidatorService {
-  constructor(private http: HttpClient, private oauth: OauthService) {}
-  assignError(
-    component: AbstractControl,
-    key: string,
-    value: string
-  ): ValidationErrors {
+  constructor(
+    private http: HttpClient,
+    private oauth: OauthService
+  ) {}
+  assignError(component: AbstractControl, key: string, value: string): ValidationErrors {
     let errs = component.errors;
     if (!errs) {
       errs = {};
@@ -48,45 +36,21 @@ export class RequirementValidatorService {
     }
     if (postTitleComponent) {
       const title = <string>postTitleComponent.value;
-      if (
-        data.title_text_min_length &&
-        title.length < data.title_text_min_length
-      ) {
-        return this.assignError(
-          postTitleComponent,
-          "minlength",
-          `Too short -- must be ${data.title_text_min_length} or longer.`
-        );
+      if (data.title_text_min_length && title.length < data.title_text_min_length) {
+        return this.assignError(postTitleComponent, "minlength", `Too short -- must be ${data.title_text_min_length} or longer.`);
       }
-      if (
-        data.title_text_max_length &&
-        title.length > data.title_text_max_length
-      ) {
-        return this.assignError(
-          postTitleComponent,
-          "minlength",
-          `Too long -- must be ${data.title_text_max_length} or shorter.`
-        );
+      if (data.title_text_max_length && title.length > data.title_text_max_length) {
+        return this.assignError(postTitleComponent, "minlength", `Too long -- must be ${data.title_text_max_length} or shorter.`);
       }
-      if (
-        data.title_blacklisted_strings &&
-        data.title_blacklisted_strings.length > 0
-      ) {
+      if (data.title_blacklisted_strings && data.title_blacklisted_strings.length > 0) {
         for (let i = 0; i < data.title_blacklisted_strings.length; i++) {
           const word = <string>data.title_blacklisted_strings[i].toLowerCase();
           if (title.toLowerCase().search(word) != -1) {
-            return this.assignError(
-              postTitleComponent,
-              "blacklist",
-              `Contains blacklisted word -- ${word}.`
-            );
+            return this.assignError(postTitleComponent, "blacklist", `Contains blacklisted word -- ${word}.`);
           }
         }
       }
-      if (
-        data.title_required_strings &&
-        data.title_required_strings.length > 0
-      ) {
+      if (data.title_required_strings && data.title_required_strings.length > 0) {
         let wordCount = 0;
         for (let i = 0; i < data.title_required_strings.length; i++) {
           const word = <string>data.title_required_strings[i].toLowerCase();
@@ -95,55 +59,26 @@ export class RequirementValidatorService {
           }
         }
         if (wordCount == 0) {
-          return this.assignError(
-            postTitleComponent,
-            "whitelist",
-            `Contains no whitelisted words.`
-          );
+          return this.assignError(postTitleComponent, "whitelist", `Contains no whitelisted words.`);
         }
       }
     }
     if (postBodyComponent) {
       const body = <string>postBodyComponent.value;
-      if (
-        data.body_restriction_policy &&
-        <string>data.body_restriction_policy === "required" &&
-        body.length < 1
-      ) {
+      if (data.body_restriction_policy && <string>data.body_restriction_policy === "required" && body.length < 1) {
         return this.assignError(postBodyComponent, "required", `Required.`);
       }
-      if (
-        data.body_text_min_length &&
-        body.length < data.body_text_min_length
-      ) {
-        return this.assignError(
-          postBodyComponent,
-          "minlength",
-          `Too short -- must be ${data.title_text_min_length} or longer.`
-        );
+      if (data.body_text_min_length && body.length < data.body_text_min_length) {
+        return this.assignError(postBodyComponent, "minlength", `Too short -- must be ${data.title_text_min_length} or longer.`);
       }
-      if (
-        data.body_text_max_length &&
-        body.length > data.body_text_max_length
-      ) {
-        return this.assignError(
-          postBodyComponent,
-          "maxLength",
-          `Too short -- must be ${data.body_text_max_length} or longer.`
-        );
+      if (data.body_text_max_length && body.length > data.body_text_max_length) {
+        return this.assignError(postBodyComponent, "maxLength", `Too short -- must be ${data.body_text_max_length} or longer.`);
       }
-      if (
-        data.body_blacklisted_string &&
-        data.body_blacklisted_strings.length > 0
-      ) {
+      if (data.body_blacklisted_string && data.body_blacklisted_strings.length > 0) {
         for (let i = 0; i < data.body_blacklisted_strings.length; i++) {
           const word = <string>data.body_blacklisted_strings[i].toLowerCase();
           if (body.toLowerCase().search(word) != -1) {
-            return this.assignError(
-              postBodyComponent,
-              "blacklist",
-              `Contains blacklisted word -- ${word}.`
-            );
+            return this.assignError(postBodyComponent, "blacklist", `Contains blacklisted word -- ${word}.`);
           }
         }
       }
@@ -156,11 +91,7 @@ export class RequirementValidatorService {
           }
         }
         if (wordCount == 0) {
-          return this.assignError(
-            postBodyComponent,
-            "whitelist",
-            `Contains no whitelisted words.`
-          );
+          return this.assignError(postBodyComponent, "whitelist", `Contains no whitelisted words.`);
         }
       }
     }
@@ -175,11 +106,7 @@ export class RequirementValidatorService {
     };
 
     const that = this;
-    return (
-      group: AbstractControl
-    ):
-      | Promise<ValidationErrors | null>
-      | Observable<ValidationErrors | null> => {
+    return (group: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
       const title = group.get("Title");
       const subreddit = group.get("Subreddit");
       const body = group.get("Text");
@@ -199,35 +126,30 @@ export class RequirementValidatorService {
           take(1),
           switchMap((x: any) => {
             const s = subreddit.value;
-            return that.http
-              .get(
-                `https://oauth.reddit.com/api/v1/${s}/post_requirements.json`,
-                httpOptions
-              )
-              .pipe(
-                catchError((x: any) => {
-                  return of({
-                    error: "Subreddit does not exist"
-                  });
-                }),
-                take(1),
-                map((data: any) => {
-                  if (data.error) {
-                    const err = data.error;
-                    let errs = subreddit.errors;
-                    if (!errs) {
-                      errs = {};
-                    }
-                    errs["sub"] = err;
-                    subreddit.setErrors(errs);
-                    return { sub: err };
+            return that.http.get(`https://oauth.reddit.com/api/v1/${s}/post_requirements.json`, httpOptions).pipe(
+              catchError((x: any) => {
+                return of({
+                  error: "Subreddit does not exist"
+                });
+              }),
+              take(1),
+              map((data: any) => {
+                if (data.error) {
+                  const err = data.error;
+                  let errs = subreddit.errors;
+                  if (!errs) {
+                    errs = {};
                   }
-                  if (title) {
-                    return that.checkPostRequirements(title, body, data);
-                  }
-                  return null;
-                })
-              );
+                  errs["sub"] = err;
+                  subreddit.setErrors(errs);
+                  return { sub: err };
+                }
+                if (title) {
+                  return that.checkPostRequirements(title, body, data);
+                }
+                return null;
+              })
+            );
           })
         );
       }

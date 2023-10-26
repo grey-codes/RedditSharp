@@ -119,21 +119,13 @@ export class Post {
       const pluralDecision = 2 - 0.0000001;
       let secs = Math.floor(this._initDate / 1000 - this.utc);
 
-      if (secs < 60)
-        return (
-          Math.floor(secs) + " second" + (secs > pluralDecision ? "s" : "")
-        );
+      if (secs < 60) return Math.floor(secs) + " second" + (secs > pluralDecision ? "s" : "");
       secs /= 60;
-      if (secs < 60)
-        return (
-          Math.floor(secs) + " minute" + (secs > pluralDecision ? "s" : "")
-        );
+      if (secs < 60) return Math.floor(secs) + " minute" + (secs > pluralDecision ? "s" : "");
       secs /= 60;
-      if (secs < 24)
-        return Math.floor(secs) + " hour" + (secs > pluralDecision ? "s" : "");
+      if (secs < 24) return Math.floor(secs) + " hour" + (secs > pluralDecision ? "s" : "");
       secs /= 24;
-      if (secs < 365)
-        return Math.floor(secs) + " day" + (secs > pluralDecision ? "s" : "");
+      if (secs < 365) return Math.floor(secs) + " day" + (secs > pluralDecision ? "s" : "");
       secs /= 365;
       return Math.floor(secs) + " year" + (secs > pluralDecision ? "s" : "");
     }

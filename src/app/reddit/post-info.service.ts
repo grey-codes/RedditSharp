@@ -1,8 +1,4 @@
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders
-} from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Injectable, NgZone } from "@angular/core";
 import { interval, Observable, Subject } from "rxjs";
 import { first } from "rxjs/operators";
@@ -29,11 +25,7 @@ export class PostInfoService {
     return doc.documentElement.textContent;
   }
 
-  private postFromData(
-    p: Post,
-    data: any,
-    overwriteData = false
-  ): void {
+  private postFromData(p: Post, data: any, overwriteData = false): void {
     p.replies = [];
     if (Array.isArray(data)) {
       for (let i = 0; i < data.length; i++) {
@@ -89,12 +81,15 @@ export class PostInfoService {
         post.previewUrl = this.htmlDecode(im.source.url);
       }
       if (!!im && !!im.resolutions && !!im.resolutions.length) {
-        post.srcSet = im.resolutions.reduce((previousString: string, img: any) => previousString + (previousString.length ? ", " : "") + this.htmlDecode(img.url) + " " + img.width+"w", "" )
+        post.srcSet = im.resolutions.reduce(
+          (previousString: string, img: any) =>
+            previousString + (previousString.length ? ", " : "") + this.htmlDecode(img.url) + " " + img.width + "w",
+          ""
+        );
       }
     }
     if (json.thumbnail) post.thumbnailUrl = this.htmlDecode(json.thumbnail);
-    if (json.media_embed && json.media_embed.content)
-      post.mediaEmbed = this.htmlDecode(json.media_embed.content);
+    if (json.media_embed && json.media_embed.content) post.mediaEmbed = this.htmlDecode(json.media_embed.content);
     if (json.secure_media && json.secure_media.reddit_video) {
       const v = json.secure_media.reddit_video;
       post.videoUrl = v.fallback_url;
@@ -147,10 +142,7 @@ export class PostInfoService {
     }
 
     if (json.subreddit && json.subreddit.length > 0) {
-      const id = (json.subreddit_id ?? PostType.Subreddit + "_null").replace(
-        PostType.Subreddit + "_",
-        ""
-      );
+      const id = (json.subreddit_id ?? PostType.Subreddit + "_null").replace(PostType.Subreddit + "_", "");
       post.subreddit = new Subreddit(id, PostType.Subreddit, json.subreddit);
     }
 
@@ -170,12 +162,7 @@ export class PostInfoService {
     }
   }
 
-  private _processCommentData(
-    p: Post,
-    obs: Observable<any>,
-    s: Subject<any> | null = null,
-    overwriteData = false
-  ) {
+  private _processCommentData(p: Post, obs: Observable<any>, s: Subject<any> | null = null, overwriteData = false) {
     obs.pipe(first()).subscribe(
       (results: any) => {
         this.postFromData(p, results, overwriteData);
@@ -214,12 +201,7 @@ export class PostInfoService {
         .subscribe(() => {
           this._processCommentData(
             p,
-            this.http.get(
-              `https://oauth.reddit.com/${
-                p.subreddit ? "/r/" + p.subreddit.name : ""
-              }/comments/${p.id}/.json?`,
-              httpOptions
-            ),
+            this.http.get(`https://oauth.reddit.com/${p.subreddit ? "/r/" + p.subreddit.name : ""}/comments/${p.id}/.json?`, httpOptions),
             s,
             true
           );
@@ -227,12 +209,7 @@ export class PostInfoService {
     } else {
       this._processCommentData(
         p,
-        this.http.jsonp(
-          `https://reddit.com/${
-            p.subreddit ? "/r/" + p.subreddit.name : ""
-          }/comments/${p.id}/.json?`,
-          "jsonp"
-        ),
+        this.http.jsonp(`https://reddit.com/${p.subreddit ? "/r/" + p.subreddit.name : ""}/comments/${p.id}/.json?`, "jsonp"),
         s,
         true
       );
@@ -264,26 +241,24 @@ export class PostInfoService {
         })
       )
       .subscribe(() => {
-        this.http
-          .post(`https://oauth.reddit.com/api/vote/`, postdata, httpOptions)
-          .subscribe(
-            (res) => {
-              p.userVote = dir;
-            },
-            (err: HttpErrorResponse) => {
-              if (err.status == 429) {
-                //rate limited
-                interval(attempts * 1000)
-                  .pipe(first())
-                  .subscribe(() => {
-                    this.vote(p, voteDir, attempts + 1);
-                  }); //wait an increasing amount of time before retrying
-              }
-              if (!environment.production) {
-                console.log(err); //might want to replace this with b
-              }
+        this.http.post(`https://oauth.reddit.com/api/vote/`, postdata, httpOptions).subscribe(
+          (res) => {
+            p.userVote = dir;
+          },
+          (err: HttpErrorResponse) => {
+            if (err.status == 429) {
+              //rate limited
+              interval(attempts * 1000)
+                .pipe(first())
+                .subscribe(() => {
+                  this.vote(p, voteDir, attempts + 1);
+                }); //wait an increasing amount of time before retrying
             }
-          );
+            if (!environment.production) {
+              console.log(err); //might want to replace this with b
+            }
+          }
+        );
       });
   }
 }

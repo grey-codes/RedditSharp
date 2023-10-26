@@ -1,12 +1,5 @@
 import { ScrollDispatcher } from "@angular/cdk/overlay";
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  NgZone,
-  OnDestroy,
-  OnInit
-} from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { ActivatedRoute } from "@angular/router";
 import { BehaviorSubject, merge, Subject, Subscription } from "rxjs";
@@ -90,15 +83,8 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
       .pipe(debounceTime(scrollDelay))
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe((e) => {
-        const y: number = Math.max(
-          window.scrollY,
-          content ? content.scrollTop : 0
-        );
-        if (
-          content &&
-          y > content.scrollHeight - window.innerHeight * 2 &&
-          y > window.innerHeight
-        ) {
+        const y: number = Math.max(window.scrollY, content ? content.scrollTop : 0);
+        if (content && y > content.scrollHeight - window.innerHeight * 2 && y > window.innerHeight) {
           //grab more posts
           if (!this.loading) {
             this.ngZone.run(() => {
@@ -108,15 +94,9 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         }
       });
 
-    const sortObservable = this.sortService.sortMode$.pipe(
-      takeUntil(this.ngUnsubscribe),
-      skip(1)
-    );
+    const sortObservable = this.sortService.sortMode$.pipe(takeUntil(this.ngUnsubscribe), skip(1));
 
-    const filterObservable = this.sortService.filterMode$.pipe(
-      takeUntil(this.ngUnsubscribe),
-      skip(1)
-    );
+    const filterObservable = this.sortService.filterMode$.pipe(takeUntil(this.ngUnsubscribe), skip(1));
 
     const mergedObservable = merge(sortObservable, filterObservable);
     mergedObservable.pipe(debounceTime(50)).subscribe(() => {
@@ -125,16 +105,14 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.route.params
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((routeParams: any) => {
-        this.subreddit = routeParams.subreddit;
-        const postid: string | null = routeParams.postid;
-        if (routeParams.postid && this.subreddit) {
-          this.openPost(new Post(routeParams.postid, PostType.Link));
-        }
-        window.scrollTo(0, 0);
-      });
+    this.route.params.pipe(takeUntil(this.ngUnsubscribe)).subscribe((routeParams: any) => {
+      this.subreddit = routeParams.subreddit;
+      const postid: string | null = routeParams.postid;
+      if (routeParams.postid && this.subreddit) {
+        this.openPost(new Post(routeParams.postid, PostType.Link));
+      }
+      window.scrollTo(0, 0);
+    });
   }
 
   ngOnDestroy(): void {
@@ -208,9 +186,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           this._subscription = this.rs
             .fetchPosts(
               this.subreddit,
-              this.posts.length > 0
-                ? this.posts[this.posts.length - 1].fullname
-                : null,
+              this.posts.length > 0 ? this.posts[this.posts.length - 1].fullname : null,
               25,
               this.sortMode,
               this.filterMode
@@ -234,9 +210,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
       this._subscription = this.rs
         .fetchPosts(
           this.subreddit,
-          this.posts.length > 0
-            ? this.posts[this.posts.length - 1].fullname
-            : null,
+          this.posts.length > 0 ? this.posts[this.posts.length - 1].fullname : null,
           25,
           this.sortMode,
           this.filterMode
