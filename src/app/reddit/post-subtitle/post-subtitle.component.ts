@@ -7,7 +7,13 @@ import { Post } from "../post";
   styleUrls: ["./post-subtitle.component.css"]
 })
 export class PostSubtitleComponent implements OnInit, OnChanges {
+  private static readonly LinkHostExclusions = [
+    'www.reddit.com',
+    'old.reddit.com',
+    'reddit.com'
+  ]
   @Input() post!: Post; // tslint:disable-line: no-input-rename
+  isLinkPost?: boolean;
 
   constructor() {}
 
@@ -23,5 +29,7 @@ export class PostSubtitleComponent implements OnInit, OnChanges {
     if (this.post === null) {
       throw new Error("Attribute 'post' is required");
     }
+    const postUrl = this.post.url ? new URL(this.post.url) : undefined;
+    this.isLinkPost = postUrl ? !PostSubtitleComponent.LinkHostExclusions.includes(postUrl.host) : false;
   }
 }
