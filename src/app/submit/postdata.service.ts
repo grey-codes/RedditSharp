@@ -7,12 +7,8 @@ import { takeUntil } from "rxjs/operators";
 })
 export class PostDataService implements OnDestroy {
   private _type: SubmissionType = SubmissionType.Link;
-  private _type$: BehaviorSubject<SubmissionType> = new BehaviorSubject<SubmissionType>(
-    this._type
-  );
-  private _submitFormData$: BehaviorSubject<
-    SubmitFormControl[]
-  > = new BehaviorSubject<SubmitFormControl[]>([]);
+  private _type$: BehaviorSubject<SubmissionType> = new BehaviorSubject<SubmissionType>(this._type);
+  private _submitFormData$: BehaviorSubject<SubmitFormControl[]> = new BehaviorSubject<SubmitFormControl[]>([]);
 
   public set type(type: SubmissionType) {
     this._type = type;
@@ -90,11 +86,9 @@ export class PostDataService implements OnDestroy {
   };
 
   constructor() {
-    this._type$
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((type: SubmissionType) => {
-        this._submitFormData$.next(this.SubmitFormControlMap[type]);
-      });
+    this._type$.pipe(takeUntil(this.ngUnsubscribe)).subscribe((type: SubmissionType) => {
+      this._submitFormData$.next(this.SubmitFormControlMap[type]);
+    });
   }
 
   ngOnDestroy(): void {

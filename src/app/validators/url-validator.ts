@@ -1,8 +1,6 @@
 import { AbstractControl, ValidationErrors } from "@angular/forms";
 
-export function URLValidator(
-  control: AbstractControl
-): null | ValidationErrors {
+export function URLValidator(control: AbstractControl): null | ValidationErrors {
   let validUrl = true;
 
   try {

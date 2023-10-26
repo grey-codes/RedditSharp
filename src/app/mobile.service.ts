@@ -13,10 +13,8 @@ export class MobileService {
 
   constructor(breakpointObserver: BreakpointObserver) {
     this.mobileQuery = breakpointObserver.observe(["(max-width: 600px)"]);
-    this.mobileQuery
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((x: BreakpointState) => {
-        this.mobile = x.matches;
-      });
+    this.mobileQuery.pipe(takeUntil(this.ngUnsubscribe)).subscribe((x: BreakpointState) => {
+      this.mobile = x.matches;
+    });
   }
 }

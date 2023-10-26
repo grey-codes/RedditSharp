@@ -10,7 +10,7 @@ const action = "Close";
 @Injectable({
   providedIn: "root"
 })
-export class LoggedInGuard  {
+export class LoggedInGuard {
   constructor(
     private oauth: OauthService,
     private snack: MatSnackBar,
@@ -19,11 +19,7 @@ export class LoggedInGuard  {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (!this.oauth.getLoggedIn()) {
       this.snack.open(notLoggedIn, action, {
         duration: 2000

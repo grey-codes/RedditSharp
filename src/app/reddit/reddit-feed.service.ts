@@ -51,11 +51,9 @@ export class RedditFeedService {
     if (this.oauth.getReady()) {
       ref = this.httpClient
         .get(
-          `https://oauth.reddit.com/${subreddit ? "r/" + subreddit + "/" : ""}${
-            sortMode ? sortMode + "/" : ""
-          }.json?limit=${limit}${after ? "&after=" + after : ""}${
-            filterMode ? "&t=" + filterMode : ""
-          }`,
+          `https://oauth.reddit.com/${subreddit ? "r/" + subreddit + "/" : ""}${sortMode ? sortMode + "/" : ""}.json?limit=${limit}${
+            after ? "&after=" + after : ""
+          }${filterMode ? "&t=" + filterMode : ""}`,
           httpOptions
         )
         .pipe(
@@ -67,11 +65,9 @@ export class RedditFeedService {
     } else {
       ref = this.httpClient
         .jsonp(
-          `https://reddit.com/${subreddit ? "r/" + subreddit + "/" : ""}${
-            sortMode ? sortMode + "/" : ""
-          }.json?limit=${limit}${after ? "&after=" + after : ""}${
-            filterMode ? "&t=" + filterMode : ""
-          }`,
+          `https://reddit.com/${subreddit ? "r/" + subreddit + "/" : ""}${sortMode ? sortMode + "/" : ""}.json?limit=${limit}${
+            after ? "&after=" + after : ""
+          }${filterMode ? "&t=" + filterMode : ""}`,
           "jsonp"
         )
         .pipe(
@@ -112,11 +108,7 @@ export class RedditFeedService {
     if (data.spoiler) {
       body += `&spoiler=${data.spoiler}`;
     }
-    const obs = this.httpClient.post(
-      "https://oauth.reddit.com/api/submit",
-      body,
-      httpOptions
-    );
+    const obs = this.httpClient.post("https://oauth.reddit.com/api/submit", body, httpOptions);
     return obs;
   }
 

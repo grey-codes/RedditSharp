@@ -9,7 +9,10 @@ import { Subreddit } from "./subreddit";
   providedIn: "root"
 })
 export class MeService {
-  constructor(private http: HttpClient, private oauth: OauthService) {}
+  constructor(
+    private http: HttpClient,
+    private oauth: OauthService
+  ) {}
 
   getInfo(): void {
     if (!this.oauth.getLoggedIn()) return;
@@ -21,19 +24,14 @@ export class MeService {
       })
     };
 
-    this.http
-      .get("https://oauth.reddit.com/api/v1/me", httpOptions)
-      .subscribe((data) => {
-        if (!environment.production) {
-          console.log(data);
-        }
-      });
+    this.http.get("https://oauth.reddit.com/api/v1/me", httpOptions).subscribe((data) => {
+      if (!environment.production) {
+        console.log(data);
+      }
+    });
   }
 
-  getSubreddits(
-    after: string | null = null,
-    s: Subject<Subreddit> = new Subject<Subreddit>()
-  ): Observable<any> {
+  getSubreddits(after: string | null = null, s: Subject<Subreddit> = new Subject<Subreddit>()): Observable<any> {
     if (!this.oauth.getLoggedIn()) return s;
 
     const httpOptions = {
@@ -45,16 +43,12 @@ export class MeService {
 
     this.http
       .get(
-        `https://oauth.reddit.com/subreddits/mine/subscriber?limit=${
-          environment.subredditLimit
-        }${after ? "&after=" + after : ""}`,
+        `https://oauth.reddit.com/subreddits/mine/subscriber?limit=${environment.subredditLimit}${after ? "&after=" + after : ""}`,
         httpOptions
       )
       .subscribe((res: any) => {
         res.data.children.forEach((child: any) => {
-          s.next(
-            new Subreddit(child.data.id, child.kind, child.data.display_name)
-          );
+          s.next(new Subreddit(child.data.id, child.kind, child.data.display_name));
         });
         if (res.data.after) {
           this.getSubreddits(res.data.after, s);

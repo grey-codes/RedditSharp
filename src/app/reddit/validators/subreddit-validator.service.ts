@@ -1,18 +1,7 @@
 import { Injectable } from "@angular/core";
-import {
-  AbstractControl,
-  AsyncValidatorFn,
-  ValidationErrors
-} from "@angular/forms";
+import { AbstractControl, AsyncValidatorFn, ValidationErrors } from "@angular/forms";
 import { Observable, of } from "rxjs";
-import {
-  catchError,
-  debounceTime,
-  map,
-  startWith,
-  switchMap,
-  take
-} from "rxjs/operators";
+import { catchError, debounceTime, map, startWith, switchMap, take } from "rxjs/operators";
 import { RedditFeedService } from "../reddit-feed.service";
 
 function isEmpty(value: any): boolean {
@@ -26,11 +15,7 @@ export class SubredditValidatorService {
   constructor(private rfs: RedditFeedService) {}
   getValidator(): AsyncValidatorFn {
     const that = this;
-    return (
-      control: AbstractControl
-    ):
-      | Promise<ValidationErrors | null>
-      | Observable<ValidationErrors | null> => {
+    return (control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
       if (isEmpty(control.value)) {
         return of(null);
       } else {

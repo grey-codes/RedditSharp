@@ -41,21 +41,17 @@ export class DarkModeService implements OnDestroy {
   }
 
   constructor(breakpointObserver: BreakpointObserver) {
-    this.darkQuery = breakpointObserver.observe([
-      "(prefers-color-scheme: dark)"
-    ]);
+    this.darkQuery = breakpointObserver.observe(["(prefers-color-scheme: dark)"]);
 
     const storedDark = localStorage.getItem("dark");
     this._darkMode = storedDark ? storedDark === "true" : null;
 
     this.darkMode$ = new BehaviorSubject<boolean>(this.darkMode);
-    this.darkQuery
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((x: BreakpointState) => {
-        if (x) {
-          this.darkDefault = x.matches;
-        }
-      });
+    this.darkQuery.pipe(takeUntil(this.ngUnsubscribe)).subscribe((x: BreakpointState) => {
+      if (x) {
+        this.darkDefault = x.matches;
+      }
+    });
   }
 
   ngOnDestroy(): void {

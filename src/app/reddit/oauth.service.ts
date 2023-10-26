@@ -12,9 +12,7 @@ export const EXPIRATION_PADDING: number = 60 * 5;
 })
 export class OauthService {
   private _refreshing = false;
-  private _ready: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    false
-  );
+  private _ready: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private _token: string | null;
 
   constructor(private http: HttpClient) {
@@ -28,13 +26,9 @@ export class OauthService {
     localStorage.setItem("state", state);
     window.location.href = `https://www.reddit.com/api/v1/authorize?client_id=${
       environment.clientId
-    }&response_type=code&state=${encodeURIComponent(
-      state
-    )}&redirect_uri=${encodeURIComponent(
+    }&response_type=code&state=${encodeURIComponent(state)}&redirect_uri=${encodeURIComponent(
       environment.redirectUrl
-    )}&scope=${encodeURIComponent(environment.scope)}&duration=${
-      perm ? "permanent" : "temporary"
-    }`;
+    )}&scope=${encodeURIComponent(environment.scope)}&duration=${perm ? "permanent" : "temporary"}`;
   }
 
   logOut(redirect: string | null = "/"): void {
@@ -44,11 +38,7 @@ export class OauthService {
     if (redirect) window.location.href = redirect;
   }
 
-  validateLogIn(
-    state: string | null,
-    code: string | null,
-    callback: ((x: string) => void) | null = null
-  ) {
+  validateLogIn(state: string | null, code: string | null, callback: ((x: string) => void) | null = null) {
     if (!state) {
       alert("no state");
       return; //We also need to display an error, probably. Later though. Somebody tried to MITM
@@ -129,17 +119,15 @@ export class OauthService {
     const redirectUri = environment.redirectUrl;
     const postdata = `grant_type=${grantType}&code=${code}&redirect_uri=${redirectUri}`;
 
-    return this.http
-      .post(environment.tokenEndpoint, postdata, httpOptions)
-      .pipe(
-        map((res: any) => {
-          if (res.error) {
-            return <AuthenticationError>res;
-          } else {
-            return <AuthenticationResult>res;
-          }
-        })
-      );
+    return this.http.post(environment.tokenEndpoint, postdata, httpOptions).pipe(
+      map((res: any) => {
+        if (res.error) {
+          return <AuthenticationError>res;
+        } else {
+          return <AuthenticationResult>res;
+        }
+      })
+    );
   }
 
   private refresh(): void {
