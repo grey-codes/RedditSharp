@@ -2,7 +2,7 @@ name: Angular Firebase CI - Deploy
 on:
   workflow_run:
     workflows: [Angular Firebase CI - Build] # Reuse the name of your tests workflow
-    branches: [master]
+    branches: [main]
     types: [completed]
 jobs:
   deploy:
