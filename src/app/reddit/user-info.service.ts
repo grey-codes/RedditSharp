@@ -7,7 +7,7 @@ import { User } from "./user";
   providedIn: "root"
 })
 export class UserInfoService {
-  private _loading: boolean = false;
+  private _loading = false;
   userQueue: User[] = [];
 
   constructor(private http: HttpClient, private ngZone: NgZone) {}
@@ -18,7 +18,7 @@ export class UserInfoService {
   }
   private performNextRequest() {
     this._loading = true;
-    let u: User = <User>this.userQueue.shift();
+    const u: User = <User>this.userQueue.shift();
     this.http
       .jsonp(`https://reddit.com/user/${u.name}/about.json?`, "jsonp")
       .pipe(first())

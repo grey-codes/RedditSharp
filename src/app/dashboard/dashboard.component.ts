@@ -20,7 +20,7 @@ import { FilterModes, SortModes, SortService } from "../reddit/sort.service";
 import { UserInfoService } from "../reddit/user-info.service";
 import { PostModalComponent } from "../view/post-modal/post-modal.component";
 
-const scrollDelay: number = 100;
+const scrollDelay = 100;
 
 @Component({
   selector: "app-dashboard",
@@ -90,7 +90,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
       .pipe(debounceTime(scrollDelay))
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe((e) => {
-        let y: number = Math.max(
+        const y: number = Math.max(
           window.scrollY,
           content ? content.scrollTop : 0
         );
@@ -129,7 +129,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe((routeParams: any) => {
         this.subreddit = routeParams.subreddit;
-        let postid: string | null = routeParams.postid;
+        const postid: string | null = routeParams.postid;
         if (routeParams.postid && this.subreddit) {
           this.openPost(new Post(routeParams.postid, PostType.Link));
         }
@@ -143,7 +143,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onPostClicked(event: Event) {
-    let target = event.target || event.srcElement || event.currentTarget;
+    const target = event.target || event.srcElement || event.currentTarget;
     if (!target) return;
     let el = <Element>target;
     let idAttr = el.getAttribute("data-post-index");
@@ -153,7 +153,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     if (!idAttr) return;
 
-    let value: string | null = idAttr;
+    const value: string | null = idAttr;
     if (!value) return;
 
     this.openPost(this.posts[parseInt(value.replace("post-", ""))]);
@@ -174,7 +174,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   openPost(post: Post) {
-    let dialogRef = this.dialog.open(PostModalComponent, {
+    const dialogRef = this.dialog.open(PostModalComponent, {
       maxWidth: "none",
       //width: Math.round(Math.min(window.innerWidth*0.8,window.innerHeight*1)/window.innerWidth*100).toString() + "%",
       //height:  "90%",

@@ -25,7 +25,7 @@ function isEmpty(value: any): boolean {
 export class SubredditValidatorService {
   constructor(private rfs: RedditFeedService) {}
   getValidator(): AsyncValidatorFn {
-    let that = this;
+    const that = this;
     return (
       control: AbstractControl
     ):
@@ -39,7 +39,7 @@ export class SubredditValidatorService {
           debounceTime(200),
           take(1),
           switchMap((x: any) => {
-            let s = <string>x;
+            const s = <string>x;
             return that.rfs.fetchPosts(s).pipe(
               catchError((x: any) => {
                 return of({

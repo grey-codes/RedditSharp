@@ -13,7 +13,7 @@ import { FilterModes, SortModes } from "./sort.service";
 })
 export class RedditFeedService {
   private _subreddit: string | null = null;
-  private _loading: boolean = false;
+  private _loading = false;
   private _lastID: string | null = null;
   private _lastType: string | null = null;
   //client: HttpClient;
@@ -28,9 +28,9 @@ export class RedditFeedService {
   ) {}
 
   fetchPosts(
-    subreddit: String | null = null,
-    after: String | null = null,
-    limit: number = 25,
+    subreddit: string | null = null,
+    after: string | null = null,
+    limit = 25,
     sortMode: SortModes | null = null,
     filterMode: FilterModes | null = null
   ): Observable<Post> {
@@ -42,7 +42,7 @@ export class RedditFeedService {
     };
 
     const dataToPost = (child: any) => {
-      let post: Post = new Post(child.data.id, child.kind);
+      const post: Post = new Post(child.data.id, child.kind);
       this.postInfo.populatePostInfo(post, child.data);
       return post;
     };
@@ -112,7 +112,7 @@ export class RedditFeedService {
     if (data.spoiler) {
       body += `&spoiler=${data.spoiler}`;
     }
-    let obs = this.httpClient.post(
+    const obs = this.httpClient.post(
       "https://oauth.reddit.com/api/submit",
       body,
       httpOptions

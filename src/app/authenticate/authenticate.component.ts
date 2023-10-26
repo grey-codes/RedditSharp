@@ -24,9 +24,9 @@ export class AuthenticateComponent implements OnInit, OnDestroy {
     this.route.queryParams
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe((params: Params) => {
-        let routeState: string | null = params.state;
-        let token: string | null = params.code;
-        let that = this;
+        const routeState: string | null = params.state;
+        const token: string | null = params.code;
+        const that = this;
         this.oauth.validateLogIn(routeState, token, (code) => {
           this.oauth
             .fetchToken(code)

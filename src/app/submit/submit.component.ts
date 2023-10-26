@@ -76,16 +76,16 @@ export class SubmitComponent implements OnInit, OnDestroy {
       const formGroup: { [name: string]: UntypedFormControl } = {};
 
       data.forEach((formControl) => {
-        let val: string = "";
+        let val = "";
         if (formControl.parameter) {
-          let param = this._ar.snapshot.paramMap.get(formControl.parameter);
+          const param = this._ar.snapshot.paramMap.get(formControl.parameter);
           if (param) {
             val = param;
           }
         }
 
-        let validators: ValidatorFn[] = [];
-        let validatorsAsync: AsyncValidatorFn[] = [];
+        const validators: ValidatorFn[] = [];
+        const validatorsAsync: AsyncValidatorFn[] = [];
 
         if (formControl.validators) {
           if (formControl.validators.required) {
@@ -132,7 +132,7 @@ export class SubmitComponent implements OnInit, OnDestroy {
   }
 
   getErrorMessage(fg: UntypedFormGroup, controlName: string): string {
-    let c = fg.get(controlName);
+    const c = fg.get(controlName);
     if (!c) {
       return "Invalid control";
     }
@@ -171,7 +171,7 @@ export class SubmitComponent implements OnInit, OnDestroy {
   }
 
   getReturnLink(): string[] {
-    let sub: string | null = this.getSubreddit();
+    const sub: string | null = this.getSubreddit();
     if (sub) {
       return ["/r", sub];
     }
@@ -191,13 +191,13 @@ export class SubmitComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    let data: SubmitFormData = {
+    const data: SubmitFormData = {
       type: this.firstFormGroup.get("postType")?.value,
       title: "",
       sr: ""
     };
     this.secondFormData.forEach((v: SubmitFormControl) => {
-      let ctrl = this.secondFormGroup.get(v.controlName);
+      const ctrl = this.secondFormGroup.get(v.controlName);
       if (!ctrl) return;
       switch (v.field) {
         case "title":
@@ -229,11 +229,11 @@ export class SubmitComponent implements OnInit, OnDestroy {
           break;
       }
     });
-    let tagComponent = this.thirdFormGroup.get("tags");
+    const tagComponent = this.thirdFormGroup.get("tags");
     if (tagComponent) {
-      let val = tagComponent.value;
+      const val = tagComponent.value;
       if (Array.isArray(val)) {
-        for (let tag of val) {
+        for (const tag of val) {
           switch (tag) {
             case "spoiler":
               data.spoiler = true;
@@ -254,7 +254,7 @@ export class SubmitComponent implements OnInit, OnDestroy {
     data.resubmit = true; //maybe just always resubmit, why not
     if (data.type && data.title && this._oauth.getReady()) {
       this._redditFeed.submitPost(data).subscribe((res: any) => {
-        let dialogRef = this.dialog.open(ResultModalComponent, {
+        const dialogRef = this.dialog.open(ResultModalComponent, {
           autoFocus: false,
           data: {
             results: res.json,

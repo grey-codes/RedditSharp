@@ -65,10 +65,10 @@ export class ResultModalComponent implements OnInit, OnDestroy {
     if (redditUrl.endsWith("/")) {
       redditUrl = redditUrl.substr(0, redditUrl.length - 1);
     }
-    let x: string[] = redditUrl.slice(redditUrl.search("/r/")).split("/");
+    const x: string[] = redditUrl.slice(redditUrl.search("/r/")).split("/");
     if (x.length > 0) {
       x[0] = "/" + x[0];
-      let lastString = x[x.length - 1];
+      const lastString = x[x.length - 1];
     }
     return x;
   }

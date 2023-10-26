@@ -9,7 +9,7 @@ import { takeUntil } from "rxjs/operators";
 export class DarkModeService implements OnDestroy {
   darkMode$: BehaviorSubject<boolean>;
   darkQuery: Observable<BreakpointState>;
-  private _darkDefault: boolean = true;
+  private _darkDefault = true;
   private _darkMode: boolean | null = null;
 
   ngUnsubscribe = new Subject<void>();
@@ -45,7 +45,7 @@ export class DarkModeService implements OnDestroy {
       "(prefers-color-scheme: dark)"
     ]);
 
-    let storedDark = localStorage.getItem("dark");
+    const storedDark = localStorage.getItem("dark");
     this._darkMode = storedDark ? storedDark === "true" : null;
 
     this.darkMode$ = new BehaviorSubject<boolean>(this.darkMode);

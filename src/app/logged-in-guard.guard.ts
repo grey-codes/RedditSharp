@@ -4,8 +4,8 @@ import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from "@a
 import { Observable } from "rxjs";
 import { OauthService } from "./reddit/oauth.service";
 
-const notLoggedIn: string = "Not logged in! Redirected...";
-const action: string = "Close";
+const notLoggedIn = "Not logged in! Redirected...";
+const action = "Close";
 
 @Injectable({
   providedIn: "root"
