@@ -1,12 +1,6 @@
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  Router,
-  RouterStateSnapshot,
-  UrlTree
-} from "@angular/router";
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { Observable } from "rxjs";
 import { OauthService } from "./reddit/oauth.service";
 
@@ -16,7 +10,7 @@ const action: string = "Close";
 @Injectable({
   providedIn: "root"
 })
-export class LoggedInGuard implements CanActivate {
+export class LoggedInGuard  {
   constructor(
     private oauth: OauthService,
     private snack: MatSnackBar,
