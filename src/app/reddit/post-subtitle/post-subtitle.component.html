@@ -11,7 +11,7 @@
 <br />
 <span
   ><a
-    *ngIf="post.url && post.url.search('www.reddit.com') == -1"
+    *ngIf="post.url && post.url.indexOf('www.reddit.com') === -1"
     [href]="post.url"
     class="post-link"
     >{{ post.url }}</a
