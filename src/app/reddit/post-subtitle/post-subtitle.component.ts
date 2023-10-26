@@ -7,7 +7,7 @@ import { Post } from "../post";
   styleUrls: ["./post-subtitle.component.css"]
 })
 export class PostSubtitleComponent implements OnInit, OnChanges {
-  @Input("post") post!: Post; // tslint:disable-line: no-input-rename
+  @Input() post!: Post; // tslint:disable-line: no-input-rename
 
   constructor() {}
 

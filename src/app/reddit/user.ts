@@ -2,7 +2,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 
 export class User {
   private _name: string; //3-20 characters; ensure this is validated when coding login. PW must be 6 chars
-  private _avatarUrl: string = "/assets/img/load.svg";
+  private _avatarUrl = "/assets/img/load.svg";
   private _avatarUrl$: BehaviorSubject<string> = new BehaviorSubject<string>(
     this.avatarUrl
   );
@@ -16,7 +16,7 @@ export class User {
   public get avatarUrl(): string {
     return this._avatarUrl;
   }
-  public get avatarUrl$(): Observable<String> {
+  public get avatarUrl$(): Observable<string> {
     return this._avatarUrl$;
   }
   public set avatarUrl(value: string) {

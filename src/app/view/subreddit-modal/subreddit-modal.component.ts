@@ -15,7 +15,7 @@ import { SubredditValidatorService } from "src/app/reddit/validators/subreddit-v
 export class SubredditModalComponent implements OnInit, OnDestroy {
   @ViewChild("myForm") ngForm!: NgForm;
   data: any;
-  subreddit: string = "";
+  subreddit = "";
   formGroup: UntypedFormGroup;
 
   ngUnsubscribe = new Subject<void>();
@@ -72,7 +72,7 @@ export class SubredditModalComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    let subCtl = this.formGroup.get("subreddit");
+    const subCtl = this.formGroup.get("subreddit");
     if (!subCtl) return;
     let sub = <string>subCtl.value;
     if (sub.startsWith("/r/")) {
@@ -83,7 +83,7 @@ export class SubredditModalComponent implements OnInit, OnDestroy {
   }
 
   getErrorMessage(fg: UntypedFormGroup, controlName: string): string {
-    let c = fg.get(controlName);
+    const c = fg.get(controlName);
     if (!c) {
       return "Invalid control";
     }

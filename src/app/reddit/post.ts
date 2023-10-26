@@ -29,15 +29,15 @@ export class Post {
   private _html: string | null = null;
   private _imageUrl: string | null = null;
   private _videoUrl: string | null = null;
-  private _upvotes: number = 0;
-  private _downvotes: number = 0;
+  private _upvotes = 0;
+  private _downvotes = 0;
   private _replies: Post[] = [];
   private _numComments: number | null = null;
   private _mediaEmbed: string | null = null;
 
   private _depth: number | null = null;
 
-  private _userVote: number = 0;
+  private _userVote = 0;
 
   constructor(id: string, type: PostType) {
     this._id = id;
@@ -116,7 +116,7 @@ export class Post {
   public ago(): string | null {
     if (!this.utc) return null;
     if (!this._ago) {
-      let pluralDecision = 2 - 0.0000001;
+      const pluralDecision = 2 - 0.0000001;
       let secs = Math.floor(this._initDate / 1000 - this.utc);
 
       if (secs < 60)

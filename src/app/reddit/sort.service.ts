@@ -46,8 +46,8 @@ export class SortService {
   }
 
   constructor() {
-    let sm = localStorage.getItem("sortMode");
-    let fm = localStorage.getItem("filterMode");
+    const sm = localStorage.getItem("sortMode");
+    const fm = localStorage.getItem("filterMode");
     if (sm && sm in SortModes) {
       this._sortMode = <SortModes>sm;
     }

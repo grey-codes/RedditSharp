@@ -11,7 +11,7 @@ export const EXPIRATION_PADDING: number = 60 * 5;
   providedIn: "root"
 })
 export class OauthService {
-  private _refreshing: boolean = false;
+  private _refreshing = false;
   private _ready: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false
   );
@@ -23,8 +23,8 @@ export class OauthService {
     //window['oauth']=this;
   }
 
-  logIn(perm: boolean = true): void {
-    let state: string = Math.random().toString().replace(".", "");
+  logIn(perm = true): void {
+    const state: string = Math.random().toString().replace(".", "");
     localStorage.setItem("state", state);
     window.location.href = `https://www.reddit.com/api/v1/authorize?client_id=${
       environment.clientId
@@ -65,7 +65,7 @@ export class OauthService {
   setToken(token: string, delay: number = EXPIRATION_DELAY) {
     this._token = token;
     localStorage.setItem("token", token);
-    let exp = Date.now() + delay * 1000;
+    const exp = Date.now() + delay * 1000;
     localStorage.setItem("tokenExpiration", exp.toString());
     this._ready.next(true);
   }
@@ -87,7 +87,7 @@ export class OauthService {
   }
 
   getTokenExpiration(): number | null {
-    let s = localStorage.getItem("tokenExpiration");
+    const s = localStorage.getItem("tokenExpiration");
     if (!s) return null;
     return parseInt(s);
   }
@@ -100,7 +100,7 @@ export class OauthService {
   }
 
   shouldRefresh(): boolean {
-    let exp: number | null = this.getTokenExpiration();
+    const exp: number | null = this.getTokenExpiration();
     if (!exp) return false;
     return Date.now() > exp - EXPIRATION_PADDING;
   }

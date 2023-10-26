@@ -91,7 +91,7 @@ export class AppComponent implements OnDestroy, OnInit, AfterViewInit {
         return true;
       },
       click: () => {
-        let dialogRef = this.dialog.open(SubredditModalComponent, {
+        const dialogRef = this.dialog.open(SubredditModalComponent, {
           data: {}
         });
       }
@@ -162,7 +162,7 @@ export class AppComponent implements OnDestroy, OnInit, AfterViewInit {
     this.darkMode$
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe((dark: boolean) => {
-        let overlay = overlayContainer.getContainerElement();
+        const overlay = overlayContainer.getContainerElement();
         if (dark && !overlay.classList.contains("dark-theme")) {
           overlay.classList.add("dark-theme");
         }
@@ -206,10 +206,10 @@ export class AppComponent implements OnDestroy, OnInit, AfterViewInit {
   }
 
   fetchSubreddits(): void {
-    let tempSubs: Link[] = [];
+    const tempSubs: Link[] = [];
     this.me.getSubreddits().subscribe(
       (data: Subreddit) => {
-        let x = {
+        const x = {
           text: data.name,
           url: data.name.toLowerCase()
         };
@@ -247,7 +247,7 @@ export class AppComponent implements OnDestroy, OnInit, AfterViewInit {
     if (this.route.children.length <= 0) {
       return;
     }
-    let that = this;
+    const that = this;
     this.oauth
       .isReady()
       .pipe(takeUntil(this.ngUnsubscribe))
@@ -257,8 +257,8 @@ export class AppComponent implements OnDestroy, OnInit, AfterViewInit {
         })
       )
       .subscribe((isReady: boolean) => {
-        let childRoute = that.route.children[0];
-        let sub: string | null = childRoute.snapshot.paramMap.get("subreddit");
+        const childRoute = that.route.children[0];
+        const sub: string | null = childRoute.snapshot.paramMap.get("subreddit");
         if (!sub) {
           that.router.navigate(["/post"]);
         } else {

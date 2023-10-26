@@ -9,7 +9,7 @@ import { takeUntil } from "rxjs/operators";
 export class MobileService {
   mobileQuery: Observable<BreakpointState>;
   ngUnsubscribe = new Subject<void>();
-  mobile: boolean = false;
+  mobile = false;
 
   constructor(breakpointObserver: BreakpointObserver) {
     this.mobileQuery = breakpointObserver.observe(["(max-width: 600px)"]);

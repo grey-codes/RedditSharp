@@ -8,8 +8,8 @@ import { PostInfoService } from "../post-info.service";
   styleUrls: ["./post-comment.component.css"]
 })
 export class PostCommentComponent implements OnInit, OnChanges {
-  @Input("post") post!: Post; // tslint:disable-line: no-input-rename
-  @Input("comment-level") commentLevel: number = 1;
+  @Input() post!: Post; // tslint:disable-line: no-input-rename
+  @Input("comment-level") commentLevel = 1;
 
   public readonly mobileCommentNestLevel = 3;
 

@@ -15,11 +15,11 @@ import { PostInfoService } from "../post-info.service";
   styleUrls: ["./post-footer.component.css"]
 })
 export class PostFooterComponent implements OnInit, OnChanges {
-  @Input("post") post!: Post; // tslint:disable-line: no-input-rename
+  @Input() post!: Post; // tslint:disable-line: no-input-rename
   @Output() onComment: EventEmitter<Post> = new EventEmitter();
   @Output() onClose: EventEmitter<any> = new EventEmitter();
-  showClose: boolean = false;
-  showComments: boolean = false;
+  showClose = false;
+  showComments = false;
 
   constructor(private postInfo: PostInfoService) {}
 

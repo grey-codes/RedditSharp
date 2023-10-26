@@ -25,19 +25,19 @@ export class PostInfoService {
   ) {}
 
   private htmlDecode(input: string) {
-    var doc = new DOMParser().parseFromString(input, "text/html");
+    const doc = new DOMParser().parseFromString(input, "text/html");
     return doc.documentElement.textContent;
   }
 
   private postFromData(
     p: Post,
     data: any,
-    overwriteData: boolean = false
+    overwriteData = false
   ): void {
     p.replies = [];
     if (Array.isArray(data)) {
       for (let i = 0; i < data.length; i++) {
-        let listing = data[i];
+        const listing = data[i];
         this.postFromData(p, listing, overwriteData);
       }
       return;
@@ -47,10 +47,10 @@ export class PostInfoService {
       this.populatePostInfo(p, data.data);
     } else if (data.kind === PostType.Listing && data.data.children) {
       for (let i = 0; i < data.data.children.length; i++) {
-        let childContainer = data.data.children[i];
-        let child = childContainer.data;
+        const childContainer = data.data.children[i];
+        const child = childContainer.data;
         if (childContainer.kind === PostType.Comment) {
-          let post = new Post(child.id, childContainer.kind);
+          const post = new Post(child.id, childContainer.kind);
           this.populatePostInfo(post, child);
           this.postFromData(post, child.replies, overwriteData);
           p.replies.push(post);
@@ -83,20 +83,20 @@ export class PostInfoService {
       post.imageUrl = this.htmlDecode(json.url);
     }
     if (json.preview && json.preview.images) {
-      let imgAr = json.preview.images;
-      let im = imgAr[0];
+      const imgAr = json.preview.images;
+      const im = imgAr[0];
       if (im && im.source && im.source.url) {
         post.previewUrl = this.htmlDecode(im.source.url);
       }
       if (!!im && !!im.resolutions && !!im.resolutions.length) {
-        post.srcSet = im.resolutions.reduce((previousString: string, img: any) => previousString + (!!previousString.length ? ", " : "") + this.htmlDecode(img.url) + " " + img.width+"w", "" )
+        post.srcSet = im.resolutions.reduce((previousString: string, img: any) => previousString + (previousString.length ? ", " : "") + this.htmlDecode(img.url) + " " + img.width+"w", "" )
       }
     }
     if (json.thumbnail) post.thumbnailUrl = this.htmlDecode(json.thumbnail);
     if (json.media_embed && json.media_embed.content)
       post.mediaEmbed = this.htmlDecode(json.media_embed.content);
     if (json.secure_media && json.secure_media.reddit_video) {
-      let v = json.secure_media.reddit_video;
+      const v = json.secure_media.reddit_video;
       post.videoUrl = v.fallback_url;
     }
     if (json.url_overridden_by_dest && !json.url && !json.text) {
@@ -123,7 +123,7 @@ export class PostInfoService {
 
   populatePostInfo(post: Post, json: any) {
     if (json.author) {
-      let author: User = new User(json.author);
+      const author: User = new User(json.author);
       post.author = author;
     }
 
@@ -147,7 +147,7 @@ export class PostInfoService {
     }
 
     if (json.subreddit && json.subreddit.length > 0) {
-      let id = (json.subreddit_id ?? PostType.Subreddit + "_null").replace(
+      const id = (json.subreddit_id ?? PostType.Subreddit + "_null").replace(
         PostType.Subreddit + "_",
         ""
       );
@@ -174,7 +174,7 @@ export class PostInfoService {
     p: Post,
     obs: Observable<any>,
     s: Subject<any> | null = null,
-    overwriteData: boolean = false
+    overwriteData = false
   ) {
     obs.pipe(first()).subscribe(
       (results: any) => {
@@ -194,7 +194,7 @@ export class PostInfoService {
   }
 
   fetchComments(p: Post): Observable<any> {
-    let s: Subject<any> = new Subject<any>();
+    const s: Subject<any> = new Subject<any>();
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -241,7 +241,7 @@ export class PostInfoService {
     return s.asObservable();
   }
 
-  vote(p: Post, voteDir: number, attempts: number = 0): void {
+  vote(p: Post, voteDir: number, attempts = 0): void {
     if (p.type != PostType.Link && p.type != PostType.Comment) return;
     if (attempts > 3) return;
 
@@ -252,9 +252,9 @@ export class PostInfoService {
       })
     };
 
-    let dir = Math.sign(voteDir);
+    const dir = Math.sign(voteDir);
 
-    let postdata = `id=${p.fullname}&dir=${dir}`;
+    const postdata = `id=${p.fullname}&dir=${dir}`;
 
     this.oauth
       .isReady()

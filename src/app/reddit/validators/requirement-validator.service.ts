@@ -47,7 +47,7 @@ export class RequirementValidatorService {
       return null;
     }
     if (postTitleComponent) {
-      let title = <string>postTitleComponent.value;
+      const title = <string>postTitleComponent.value;
       if (
         data.title_text_min_length &&
         title.length < data.title_text_min_length
@@ -73,7 +73,7 @@ export class RequirementValidatorService {
         data.title_blacklisted_strings.length > 0
       ) {
         for (let i = 0; i < data.title_blacklisted_strings.length; i++) {
-          let word = <string>data.title_blacklisted_strings[i].toLowerCase();
+          const word = <string>data.title_blacklisted_strings[i].toLowerCase();
           if (title.toLowerCase().search(word) != -1) {
             return this.assignError(
               postTitleComponent,
@@ -89,7 +89,7 @@ export class RequirementValidatorService {
       ) {
         let wordCount = 0;
         for (let i = 0; i < data.title_required_strings.length; i++) {
-          let word = <string>data.title_required_strings[i].toLowerCase();
+          const word = <string>data.title_required_strings[i].toLowerCase();
           if (title.toLowerCase().search(word) != -1) {
             wordCount++;
           }
@@ -104,7 +104,7 @@ export class RequirementValidatorService {
       }
     }
     if (postBodyComponent) {
-      let body = <string>postBodyComponent.value;
+      const body = <string>postBodyComponent.value;
       if (
         data.body_restriction_policy &&
         <string>data.body_restriction_policy === "required" &&
@@ -137,7 +137,7 @@ export class RequirementValidatorService {
         data.body_blacklisted_strings.length > 0
       ) {
         for (let i = 0; i < data.body_blacklisted_strings.length; i++) {
-          let word = <string>data.body_blacklisted_strings[i].toLowerCase();
+          const word = <string>data.body_blacklisted_strings[i].toLowerCase();
           if (body.toLowerCase().search(word) != -1) {
             return this.assignError(
               postBodyComponent,
@@ -150,7 +150,7 @@ export class RequirementValidatorService {
       if (data.body_required_strings && data.body_required_strings.length > 0) {
         let wordCount = 0;
         for (let i = 0; i < data.body_required_strings.length; i++) {
-          let word = <string>data.body_required_strings[i].toLowerCase();
+          const word = <string>data.body_required_strings[i].toLowerCase();
           if (body.toLowerCase().search(word) != -1) {
             wordCount++;
           }
@@ -174,7 +174,7 @@ export class RequirementValidatorService {
       })
     };
 
-    let that = this;
+    const that = this;
     return (
       group: AbstractControl
     ):
@@ -198,7 +198,7 @@ export class RequirementValidatorService {
           debounceTime(200),
           take(1),
           switchMap((x: any) => {
-            let s = subreddit.value;
+            const s = subreddit.value;
             return that.http
               .get(
                 `https://oauth.reddit.com/api/v1/${s}/post_requirements.json`,
@@ -213,7 +213,7 @@ export class RequirementValidatorService {
                 take(1),
                 map((data: any) => {
                   if (data.error) {
-                    let err = data.error;
+                    const err = data.error;
                     let errs = subreddit.errors;
                     if (!errs) {
                       errs = {};

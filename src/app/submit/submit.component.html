@@ -44,9 +44,7 @@
           </div>
           <div *ngSwitchDefault>
             <mat-form-field
-              [class.full-width-field]="
-                input.controlType == 'text' || input.controlType == 'url'
-              "
+              [class.full-width-field]="input.controlType == 'text' || input.controlType == 'url'"
             >
               <mat-label>{{ input.controlName }}</mat-label>
               <input

@@ -8,7 +8,7 @@ import { PostInfoService } from "../post-info.service";
   styleUrls: ["./post-vote.component.css"]
 })
 export class PostVoteComponent implements OnInit, OnChanges {
-  @Input("post") post!: Post; // tslint:disable-line: no-input-rename
+  @Input() post!: Post; // tslint:disable-line: no-input-rename
 
   constructor(private postInfo: PostInfoService) {}
 
