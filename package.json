@@ -33,17 +33,17 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.8",
-    "@angular-eslint/builder": "^16.2.0",
-    "@angular-eslint/eslint-plugin": "^16.2.0",
-    "@angular-eslint/eslint-plugin-template": "^16.2.0",
-    "@angular-eslint/schematics": "^16.2.0",
-    "@angular-eslint/template-parser": "^16.2.0",
+    "@angular-eslint/builder": "16.2.0",
+    "@angular-eslint/eslint-plugin": "16.2.0",
+    "@angular-eslint/eslint-plugin-template": "16.2.0",
+    "@angular-eslint/schematics": "16.2.0",
+    "@angular-eslint/template-parser": "16.2.0",
     "@angular/cli": "^16.2.8",
     "@angular/compiler-cli": "^16.2.11",
     "@types/jasmine": "~5.1.1",
-    "@typescript-eslint/eslint-plugin": "^6.9.0",
-    "@typescript-eslint/parser": "^6.9.0",
-    "eslint": "^8.52.0",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "eslint": "^8.49.0",
     "jasmine-core": "^5.1.1",
     "karma": "^6.4.2",
     "karma-chrome-launcher": "^3.2.0",
@@ -58,6 +58,6 @@
   },
   "packageManager": "yarn@3.3.1",
   "volta": {
-    "node": "18.15.0"
+    "node": "18.18.2"
   }
 }
