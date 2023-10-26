@@ -3,11 +3,14 @@
 
 name: Angular Build - PR
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  build_and_deploy:
+  build_pr:
+    name: Angular Production Build (PR)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,5 +21,12 @@ jobs:
           node-version: 18.x
       - name: Install dependencies
         run: yarn install
-      - name: Build for Production
-        run: yarn run build:prod
+      - name: Build for Firebase
+        run: yarn run build:firebase
+      - name: Archive firebase artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: 'Firebase Build'
+          path: |
+            dist
+            !dist/**/*.md
