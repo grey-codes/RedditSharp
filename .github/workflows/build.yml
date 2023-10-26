@@ -30,5 +30,6 @@ jobs:
           path: |
             dist
             firebase.json
+            .firebaserc
             !dist/**/*.md
           retention-days: 1
