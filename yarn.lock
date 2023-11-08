@@ -589,17 +589,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/platform-browser-dynamic@npm:^16.2.11":
-  version: 16.2.11
-  resolution: "@angular/platform-browser-dynamic@npm:16.2.11"
+"@angular/platform-browser-dynamic@npm:^16.2.12":
+  version: 16.2.12
+  resolution: "@angular/platform-browser-dynamic@npm:16.2.12"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 16.2.11
-    "@angular/compiler": 16.2.11
-    "@angular/core": 16.2.11
-    "@angular/platform-browser": 16.2.11
-  checksum: 101e22a80512c328765dee19c1eb1edfe550c31c9a5ef733401e6498df988638af755e42ba54efed6c54c88315840feb7790a89e30734800cd63c3709036064f
+    "@angular/common": 16.2.12
+    "@angular/compiler": 16.2.12
+    "@angular/core": 16.2.12
+    "@angular/platform-browser": 16.2.12
+  checksum: 60d76f197896beaaac38e826755cac94e41ee4702b1535e6f305d1d1be7f8382593e5cad08c4ea15055576e583f28df1d01e96953ff14d1e0e02eea7ebb57be5
   languageName: node
   linkType: hard
 
@@ -10881,7 +10881,7 @@ __metadata:
     "@angular/forms": ^16.2.11
     "@angular/material": ^16.2.10
     "@angular/platform-browser": ^16.2.12
-    "@angular/platform-browser-dynamic": ^16.2.11
+    "@angular/platform-browser-dynamic": ^16.2.12
     "@angular/router": ^16.2.11
     "@types/jasmine": ~5.1.1
     "@typescript-eslint/eslint-plugin": 6.9.1
