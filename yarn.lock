@@ -619,17 +619,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/router@npm:^16.2.11":
-  version: 16.2.11
-  resolution: "@angular/router@npm:16.2.11"
+"@angular/router@npm:^16.2.12":
+  version: 16.2.12
+  resolution: "@angular/router@npm:16.2.12"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 16.2.11
-    "@angular/core": 16.2.11
-    "@angular/platform-browser": 16.2.11
+    "@angular/common": 16.2.12
+    "@angular/core": 16.2.12
+    "@angular/platform-browser": 16.2.12
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: d922512f52e44b2d26915ac6c5b30ffb48ee6d874dc827b20d2f2ea0ab4c1589694452ac0f7ffaff9c1a45eb9a981bbe567f92b4e47b4c5ae3d567cf7f04f786
+  checksum: f5cb7ae99ae5d89f4883412b4886732e8e4dba75060b10784f79f452985228a4b0373129daae53a6d3c0ae9cf63debf18a36e210b97d3278178c7f17d2b083e0
   languageName: node
   linkType: hard
 
@@ -10882,7 +10882,7 @@ __metadata:
     "@angular/material": ^16.2.10
     "@angular/platform-browser": ^16.2.12
     "@angular/platform-browser-dynamic": ^16.2.11
-    "@angular/router": ^16.2.11
+    "@angular/router": ^16.2.12
     "@types/jasmine": ~5.1.1
     "@typescript-eslint/eslint-plugin": 6.9.1
     "@typescript-eslint/parser": 6.9.1
