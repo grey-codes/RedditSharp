@@ -39,7 +39,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@angular/cli", "npm:16.2.9"],\
             ["@angular/common", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
             ["@angular/compiler", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
-            ["@angular/compiler-cli", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
+            ["@angular/compiler-cli", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:17.0.0"],\
             ["@angular/core", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
             ["@angular/fire", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.0.0"],\
             ["@angular/forms", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
@@ -133,7 +133,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@angular-devkit/architect", "npm:0.1602.9"],\
             ["@angular-devkit/build-webpack", "virtual:5ffb7d154218f0615b41205e9dd88753b12f1d1c45b63653b219b24cce0ca005bfc2296da2733b93cdb489f81e0f794b73d83e8d78790043a35d195858455cd9#npm:0.1602.9"],\
             ["@angular-devkit/core", "virtual:5ffb7d154218f0615b41205e9dd88753b12f1d1c45b63653b219b24cce0ca005bfc2296da2733b93cdb489f81e0f794b73d83e8d78790043a35d195858455cd9#npm:16.2.9"],\
-            ["@angular/compiler-cli", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
+            ["@angular/compiler-cli", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:17.0.0"],\
             ["@angular/localize", null],\
             ["@angular/platform-server", null],\
             ["@angular/service-worker", null],\
@@ -789,17 +789,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@angular/compiler-cli", [\
-        ["npm:16.2.11", {\
-          "packageLocation": "./.yarn/cache/@angular-compiler-cli-npm-16.2.11-30333441f4-781473b0e4.zip/node_modules/@angular/compiler-cli/",\
+        ["npm:17.0.0", {\
+          "packageLocation": "./.yarn/cache/@angular-compiler-cli-npm-17.0.0-ee66064a64-24d4ff97b2.zip/node_modules/@angular/compiler-cli/",\
           "packageDependencies": [\
-            ["@angular/compiler-cli", "npm:16.2.11"]\
+            ["@angular/compiler-cli", "npm:17.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11", {\
-          "packageLocation": "./.yarn/__virtual__/@angular-compiler-cli-virtual-6bcf8eb4eb/0/cache/@angular-compiler-cli-npm-16.2.11-30333441f4-781473b0e4.zip/node_modules/@angular/compiler-cli/",\
+        ["virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:17.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@angular-compiler-cli-virtual-b234cc8f6b/0/cache/@angular-compiler-cli-npm-17.0.0-ee66064a64-24d4ff97b2.zip/node_modules/@angular/compiler-cli/",\
           "packageDependencies": [\
-            ["@angular/compiler-cli", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
+            ["@angular/compiler-cli", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:17.0.0"],\
             ["@angular/compiler", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
             ["@babel/core", "npm:7.23.2"],\
             ["@jridgewell/sourcemap-codec", "npm:1.4.14"],\
@@ -6393,7 +6393,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@ngtools-webpack-virtual-e7cf10373b/0/cache/@ngtools-webpack-npm-16.2.9-1357df273f-712e9d0086.zip/node_modules/@ngtools/webpack/",\
           "packageDependencies": [\
             ["@ngtools/webpack", "virtual:5ffb7d154218f0615b41205e9dd88753b12f1d1c45b63653b219b24cce0ca005bfc2296da2733b93cdb489f81e0f794b73d83e8d78790043a35d195858455cd9#npm:16.2.9"],\
-            ["@angular/compiler-cli", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
+            ["@angular/compiler-cli", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:17.0.0"],\
             ["@types/angular__compiler-cli", null],\
             ["@types/typescript", null],\
             ["@types/webpack", null],\
@@ -14260,7 +14260,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@angular/cli", "npm:16.2.9"],\
             ["@angular/common", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
             ["@angular/compiler", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
-            ["@angular/compiler-cli", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
+            ["@angular/compiler-cli", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:17.0.0"],\
             ["@angular/core", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
             ["@angular/fire", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.0.0"],\
             ["@angular/forms", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.11"],\
