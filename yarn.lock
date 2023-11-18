@@ -511,17 +511,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/forms@npm:^16.2.12":
-  version: 16.2.12
-  resolution: "@angular/forms@npm:16.2.12"
+"@angular/forms@npm:^17.0.3":
+  version: 17.0.3
+  resolution: "@angular/forms@npm:17.0.3"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 16.2.12
-    "@angular/core": 16.2.12
-    "@angular/platform-browser": 16.2.12
+    "@angular/common": 17.0.3
+    "@angular/core": 17.0.3
+    "@angular/platform-browser": 17.0.3
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 076478c5d5194c5cf6426104fc941b1001cfc25819017b41c83a482c9dfae61ae888789a03cf8c4f9917e1dcb9439341480ee9862529a19200344113a2ea4294
+  checksum: 9f90a074ee49929419fb839765b0d0d7d1034135be459e69b4080e25372d9acc0cc17f04c1b23f32eaccfdf11e81b4189a8286bf97de3cb8622aa716106e10ec
   languageName: node
   linkType: hard
 
@@ -10878,7 +10878,7 @@ __metadata:
     "@angular/compiler-cli": ^16.2.12
     "@angular/core": ^16.2.12
     "@angular/fire": ^16.0.0
-    "@angular/forms": ^16.2.12
+    "@angular/forms": ^17.0.3
     "@angular/material": ^16.2.12
     "@angular/platform-browser": ^16.2.12
     "@angular/platform-browser-dynamic": ^16.2.12
