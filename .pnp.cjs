@@ -46,7 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@angular/material", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
             ["@angular/platform-browser", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
             ["@angular/platform-browser-dynamic", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
-            ["@angular/router", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
+            ["@angular/router", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:17.0.3"],\
             ["@types/jasmine", "npm:5.1.2"],\
             ["@typescript-eslint/eslint-plugin", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:6.11.0"],\
             ["@typescript-eslint/parser", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:6.11.0"],\
@@ -1103,17 +1103,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@angular/router", [\
-        ["npm:16.2.12", {\
-          "packageLocation": "./.yarn/cache/@angular-router-npm-16.2.12-9b7afb5b12-f5cb7ae99a.zip/node_modules/@angular/router/",\
+        ["npm:17.0.3", {\
+          "packageLocation": "./.yarn/cache/@angular-router-npm-17.0.3-d4cf86149a-37fcb62ea2.zip/node_modules/@angular/router/",\
           "packageDependencies": [\
-            ["@angular/router", "npm:16.2.12"]\
+            ["@angular/router", "npm:17.0.3"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12", {\
-          "packageLocation": "./.yarn/__virtual__/@angular-router-virtual-b5635f8397/0/cache/@angular-router-npm-16.2.12-9b7afb5b12-f5cb7ae99a.zip/node_modules/@angular/router/",\
+        ["virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:17.0.3", {\
+          "packageLocation": "./.yarn/__virtual__/@angular-router-virtual-6fb5a3c414/0/cache/@angular-router-npm-17.0.3-d4cf86149a-37fcb62ea2.zip/node_modules/@angular/router/",\
           "packageDependencies": [\
-            ["@angular/router", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
+            ["@angular/router", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:17.0.3"],\
             ["@angular/common", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
             ["@angular/core", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
             ["@angular/platform-browser", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
@@ -14267,7 +14267,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@angular/material", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
             ["@angular/platform-browser", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
             ["@angular/platform-browser-dynamic", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
-            ["@angular/router", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:16.2.12"],\
+            ["@angular/router", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:17.0.3"],\
             ["@types/jasmine", "npm:5.1.2"],\
             ["@typescript-eslint/eslint-plugin", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:6.11.0"],\
             ["@typescript-eslint/parser", "virtual:017b9b7d6fe28f01eb0cb56cb1dbdb5a4ed9d3bf9232552b6014f47f71f2eebc67f046bd068f407e98d34af4a24f206c113b073074f2c62ffce1de7a1f496384#npm:6.11.0"],\
