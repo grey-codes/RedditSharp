@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { AbstractControl, AsyncValidatorFn, ValidationErrors } from "@angular/forms";
 import { merge, Observable, of } from "rxjs";
 import { catchError, debounceTime, map, startWith, switchMap, take } from "rxjs/operators";
-import { OauthService } from "../oauth.service";
+import { OauthService } from "../../auth/services/oauth.service";
 
 function isEmpty(value: any): boolean {
   return value === null || value.length === 0;
