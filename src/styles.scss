@@ -128,9 +128,9 @@ $dark-theme: mat.define-dark-theme((
 ));
 
 // Import mixin of sidenav component
-@import "app/dashboard/scrollbar.mixin";
-@import "app/sidenav/sidenav.component";
-@import "app/dashboard/dashcard.mixin";
+@import "app/reddit/pages/dashboard/scrollbar.mixin";
+@import "app/layout/components/sidenav/sidenav.component";
+@import "app/reddit/pages/dashboard/dashcard.mixin";
 
 //Gradients
 @mixin gradient($direction, $list) {

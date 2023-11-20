@@ -7,13 +7,13 @@ import { ActivatedRoute, Event as RouterEvent, NavigationEnd, Router } from "@an
 import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { filter, takeUntil } from "rxjs/operators";
 import { environment } from "src/environments/environment";
-import { DarkModeService } from "./dark-mode.service";
-import { MobileService } from "./mobile.service";
-import { MeService } from "./reddit/me.service";
-import { OauthService } from "./reddit/oauth.service";
-import { FilterModes, SortModes, SortService } from "./reddit/sort.service";
-import { Subreddit } from "./reddit/subreddit";
-import { SubredditModalComponent } from "./view/subreddit-modal/subreddit-modal.component";
+import { DarkModeService } from "./core/services/dark-mode.service";
+import { MobileService } from "./core/services/mobile.service";
+import { MeService } from "./reddit/services/me.service";
+import { OauthService } from "./auth/services/oauth.service";
+import { FilterModes, SortModes, SortService } from "./reddit/services/sort.service";
+import { Subreddit } from "./reddit/models/classes/subreddit";
+import { SubredditModalComponent } from "./reddit/components/subreddit-modal/subreddit-modal.component";
 
 /** @title Responsive sidenav */
 @Component({

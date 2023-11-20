@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AuthenticateComponent } from "./authenticate/authenticate.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { LoggedInGuard } from "./logged-in-guard.guard";
-import { LoggedOutGuard } from "./logged-out-guard.guard";
-import { LoginComponent } from "./login/login.component";
-import { LogoutComponent } from "./logout/logout.component";
-import { SubmitComponent } from "./submit/submit.component";
+import { AuthenticateComponent } from "./auth/pages/authenticate/authenticate.component";
+import { DashboardComponent } from "./reddit/pages/dashboard/dashboard.component";
+import { LoggedInGuard } from "./auth/guards/logged-in-guard.guard";
+import { LoggedOutGuard } from "./auth/guards/logged-out-guard.guard";
+import { LoginComponent } from "./auth/pages/login/login.component";
+import { LogoutComponent } from "./auth/pages/logout/logout.component";
+import { SubmitComponent } from "./reddit/pages/submit/submit.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
