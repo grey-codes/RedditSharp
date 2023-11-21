@@ -4630,10 +4630,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jasmine@npm:~5.1.2":
-  version: 5.1.2
-  resolution: "@types/jasmine@npm:5.1.2"
-  checksum: ec06346e866cf8c34bc8d4a97826b048bc0ac568970f1b25d1cca9113f63f50853202004836d791ff12e15d6a3fb60cbbd49f2dc054fd2e05f6f488d65e61f79
+"@types/jasmine@npm:~5.1.3":
+  version: 5.1.3
+  resolution: "@types/jasmine@npm:5.1.3"
+  checksum: 56bac41b694d79f93ec384a3192667f0461b9834a9040383b18fb1248f688650e2d82720632604f474140b2d91550054a1aea641f560aaa00134828c7085e726
   languageName: node
   linkType: hard
 
@@ -11084,7 +11084,7 @@ __metadata:
     "@angular/platform-browser": "npm:^17.0.3"
     "@angular/platform-browser-dynamic": "npm:^17.0.3"
     "@angular/router": "npm:^17.0.3"
-    "@types/jasmine": "npm:~5.1.2"
+    "@types/jasmine": "npm:~5.1.3"
     "@typescript-eslint/eslint-plugin": "npm:6.11.0"
     "@typescript-eslint/parser": "npm:6.11.0"
     debug: "npm:^4.3.4"
