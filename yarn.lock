@@ -549,17 +549,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/platform-browser-dynamic@npm:^17.0.3":
-  version: 17.0.3
-  resolution: "@angular/platform-browser-dynamic@npm:17.0.3"
+"@angular/platform-browser-dynamic@npm:^17.0.4":
+  version: 17.0.4
+  resolution: "@angular/platform-browser-dynamic@npm:17.0.4"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/common": 17.0.3
-    "@angular/compiler": 17.0.3
-    "@angular/core": 17.0.3
-    "@angular/platform-browser": 17.0.3
-  checksum: b592506b5b1d29d800817dd02d53a482026e7c96b69ad9c8a39f3eb34096576a20fb7878059620ed9a707e1740a90fef1b1e90bf337ec8505d144b86f4d09e14
+    "@angular/common": 17.0.4
+    "@angular/compiler": 17.0.4
+    "@angular/core": 17.0.4
+    "@angular/platform-browser": 17.0.4
+  checksum: c7dfd191aa66de266578e4d1734d43c2b09392a96e799eaf5f54762a1f9ff50dc0e036745ad0ea2b37b4e463a3640a2c10b18e7f9be981b61c5fbffc79e27560
   languageName: node
   linkType: hard
 
@@ -11082,7 +11082,7 @@ __metadata:
     "@angular/forms": "npm:^17.0.3"
     "@angular/material": "npm:^17.0.1"
     "@angular/platform-browser": "npm:^17.0.3"
-    "@angular/platform-browser-dynamic": "npm:^17.0.3"
+    "@angular/platform-browser-dynamic": "npm:^17.0.4"
     "@angular/router": "npm:^17.0.3"
     "@types/jasmine": "npm:~5.1.2"
     "@typescript-eslint/eslint-plugin": "npm:6.11.0"
