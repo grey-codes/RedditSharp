@@ -411,17 +411,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/compiler@npm:^17.0.3":
-  version: 17.0.3
-  resolution: "@angular/compiler@npm:17.0.3"
+"@angular/compiler@npm:^17.0.6":
+  version: 17.0.6
+  resolution: "@angular/compiler@npm:17.0.6"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/core": 17.0.3
+    "@angular/core": 17.0.6
   peerDependenciesMeta:
     "@angular/core":
       optional: true
-  checksum: 9819bb4fd41fd096e7390cdc7c8d5bd61122e3a86a724a167627b06ace32d3d234197154ae7c8b3b732323e3be160c00605f6d38029797ee2005099501e87c5f
+  checksum: 35e2eb342ecd8559434c26e4e4b27efccd55bd830f63825a4b8e0aed222837cca016109905ca4f2c306a7f3d483dd5f62d5f3650aca158130edde3d3460533b7
   languageName: node
   linkType: hard
 
@@ -11075,7 +11075,7 @@ __metadata:
     "@angular/cdk": "npm:^17.0.1"
     "@angular/cli": "npm:^17.0.1"
     "@angular/common": "npm:^17.0.3"
-    "@angular/compiler": "npm:^17.0.3"
+    "@angular/compiler": "npm:^17.0.6"
     "@angular/compiler-cli": "npm:^17.0.3"
     "@angular/core": "npm:^17.0.3"
     "@angular/fire": "npm:^16.0.0"
